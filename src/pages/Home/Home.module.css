@@ -1,0 +1,246 @@
+.hero {
+	/* Mobile Styles */
+	@apply grid grid-rows-[minmax(100px,auto)] w-11/12 mx-auto my-10 justify-items-center gap-4 max-w-6xl;
+
+	/* Tablet Styles */
+
+	/* Desktop Styles */
+	@apply lg:grid-cols-2 lg:grid-rows-[repeat(6,minmax(0px,auto))] lg:justify-items-start lg:items-center lg:gap-y-0 lg:gap-x-5;
+}
+
+.hero_content {
+	/* Mobile Styles */
+	@apply w-4/5 mx-auto text-center;
+
+	/* Desktop Styles */
+	@apply lg:text-left lg:w-full lg:row-span-4 lg:row-start-1;
+}
+
+.hero_content h3 {
+	/* Mobile Styles */
+	@apply text-sm font-semibold animate-slide-right;
+
+	/* Desktop Styles */
+	@apply lg:text-base;
+}
+
+.hero_content h1 {
+	/* Mobile Styles */
+	@apply text-3xl font-bold my-4 animate-slide-left;
+
+	/* Desktop Styles */
+	@apply lg:text-5xl lg:my-8 lg:w-4/5;
+}
+
+.hero_content p {
+	/* Mobile Styles */
+	@apply text-base;
+
+	/* Desktop Styles */
+	@apply lg:text-xl lg:w-4/5 lg:my-1;
+}
+
+.hero button {
+	/* Mobile Styles */
+	@apply bg-secondary-main p-3 w-max text-center text-white font-semibold rounded-lg px-6 hover:bg-secondary-light transition-colors duration-700;
+
+	/* Desktop Styles */
+	@apply lg:self-start lg:row-span-2 lg:text-lg;
+}
+
+.hero_image {
+	/* Mobile Styles */
+	@apply duration-300 animate-pulse-once;
+
+	/* Desktop Styles */
+	@apply lg:row-span-6;
+}
+
+.who_we_are {
+	@apply bg-paleblue my-20;
+}
+
+.who_we_are > div {
+	/* Mobile Styles */
+	@apply grid grid-rows-[minmax(100px,auto)] w-11/12 mx-auto my-10 justify-items-center gap-4 max-w-6xl;
+
+	/* Tablet Styles */
+
+	/* Desktop Styles */
+	@apply lg:grid-cols-2 lg:justify-items-start lg:items-center lg:gap-y-0 lg:gap-x-10;
+}
+
+.wwa_content {
+	/* Mobile Styles */
+	@apply w-4/5 mx-auto text-center my-7;
+
+	/* Desktop Styles */
+	@apply lg:text-left lg:w-full lg:py-10;
+}
+
+.wwa_content h2 {
+	/* Mobile Styles */
+	@apply text-2xl font-bold my-4 animate-slide-left capitalize;
+
+	/* Desktop Styles */
+	@apply lg:text-3xl lg:my-8 lg:w-4/5;
+}
+
+.wwa_content p {
+	/* Mobile Styles */
+	@apply text-base my-4;
+
+	/* Desktop Styles */
+	@apply lg:text-lg lg:w-4/5 lg:my-10 lg:leading-8;
+}
+
+.wwa_image {
+	@apply my-3;
+}
+
+.wwa_content button {
+	@apply bg-secondary-main p-3 w-max text-center text-white font-semibold rounded-lg px-6 hover:bg-secondary-light transition-colors duration-700 capitalize leading-loose;
+
+	@apply lg:self-start lg:row-span-2 lg:text-lg;
+}
+
+.our_goal {
+	/* Mobile Styles */
+	@apply grid grid-rows-[minmax(100px,auto)] w-11/12 mx-auto my-10 justify-items-center gap-4 max-w-6xl;
+
+	/* Tablet Styles */
+
+	/* Desktop Styles */
+	@apply lg:grid-cols-2 lg:justify-items-start lg:items-center lg:gap-y-0 lg:gap-x-10;
+}
+
+.og_content {
+	/* Mobile Styles */
+	@apply w-4/5 mx-auto my-7;
+
+	/* Desktop Styles */
+	@apply lg:text-left lg:w-full lg:py-10 lg:col-start-1 lg:row-start-1;
+}
+
+.og_content h2 {
+	/* Mobile Styles */
+	@apply text-2xl font-bold my-4 animate-slide-left capitalize text-center;
+
+	/* Desktop Styles */
+	@apply lg:text-3xl lg:my-8 lg:w-4/5 lg:text-left;
+}
+
+.og_content ul li {
+	/* Mobile Styles */
+	@apply text-base my-4 border-b-2 py-5 last:border-b-0 list-disc marker:text-xs marker:text-gray-400;
+
+	/* Desktop Styles */
+	@apply lg:text-lg lg:w-4/5 lg:my-0 lg:mx-8;
+}
+
+.og_image {
+	@apply my-2;
+}
+
+.how_we_work {
+	/* Mobile Styles */
+	@apply my-5
+	/* Desktop Styles */;
+}
+
+.how_we_work > div {
+	@apply text-center;
+
+	@apply lg:grid lg:grid-cols-2 lg:grid-rows-[repeat(3,minmax(0px,auto))] lg:justify-items-start lg:items-center;
+}
+
+.eh_funding {
+	@apply bg-paleblue py-5 min-w-full;
+}
+
+.how_we_work > div > h2 {
+	@apply text-center font-semibold my-4 text-2xl p-3 px-14;
+
+	@apply 2xl:min-w-[40rem] 2xl:justify-self-end 2xl:text-left;
+}
+
+.eh_projects {
+	@apply bg-primary bg-opacity-10 py-5 min-w-full;
+}
+
+.partnership {
+	@apply bg-[#D2D2D2] bg-opacity-10 py-5 min-w-full;
+
+	/* Desktop Styles */
+	@apply lg:col-span-2;
+}
+
+.eh_funding h3,
+.eh_projects h3,
+.partnership h3 {
+	@apply text-xl col-span-3;
+}
+
+.eh_funding > div > p,
+.eh_projects > div > p,
+.partnership > div > p {
+	@apply col-span-4 row-start-2 my-4 text-justify;
+}
+.eh_projects > div,
+.eh_funding > div,
+.partnership > div {
+	@apply w-4/5 mx-auto grid grid-cols-[repeat(4,minmax(10px,1fr))] grid-rows-[repeat(2,minmax(10px,auto))] my-10 gap-x-5 justify-items-center items-center max-w-4xl;
+}
+
+.eh_projects > div,
+.eh_funding > div {
+	@apply min-h-[270px] max-w-xl;
+}
+
+.eh_funding > div {
+	@apply 2xl:mr-10;
+}
+
+.eh_projects > div {
+	@apply 2xl:ml-10;
+}
+
+.partnership > div {
+	@apply lg:w-1/2 lg:text-center;
+}
+
+.partnership > div > p {
+	@apply lg:text-center;
+}
+
+.p_apps {
+	@apply col-span-4 grid grid-cols-[repeat(6,minmax(0px,1fr))] grid-rows-[repeat(2,minmax(0px,1fr))] w-full justify-items-center items-center mx-auto text-center;
+
+	@apply lg:mx-auto lg:grid-cols-[repeat(5,minmax(0px,1fr))] lg:grid-rows-none;
+}
+
+.p_apps > div:nth-child(1),
+.p_apps > div:nth-child(2),
+.p_apps > div:nth-child(3) {
+	@apply col-span-2;
+
+	@apply lg:col-auto;
+}
+
+.p_apps > div:nth-child(4) {
+	@apply col-start-2 col-span-2;
+	@apply lg:col-auto;
+}
+
+.p_apps > div:nth-child(5) {
+	@apply col-start-5 col-span-1;
+	@apply lg:col-auto;
+}
+
+.how_we_work > div > div > button {
+	@apply bg-secondary-main text-white p-3 px-5 mx-auto rounded-lg font-semibold;
+}
+
+.how_we_work > div > div:last-child {
+	@apply lg:col-start-2 lg:row-start-1 lg:justify-self-end lg:my-5 px-10 2xl:min-w-[40rem] 2xl:ml-0 2xl:text-right 2xl:justify-self-start;
+}

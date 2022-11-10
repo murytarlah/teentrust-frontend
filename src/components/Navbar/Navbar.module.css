@@ -1,0 +1,71 @@
+@tailwind base;
+
+header {
+	/* Mobile Styles */
+	@apply grid grid-cols-2 p-4 max-w-7xl mx-auto items-center relative;
+
+	/* Desktop Styles */
+	@apply md:grid md:grid-cols-10 lg:p-5;
+
+	@apply lg:grid-cols-6;
+}
+
+.logo {
+	@apply md:col-span-2;
+
+	@apply lg:col-span-1;
+}
+
+.logo img {
+	/* Moble Styles */
+	@apply w-4/5;
+
+	/* Tablet Styles */
+	@apply md:w-full;
+
+	/* Desktop Styles */
+	@apply lg:w-4/5;
+}
+
+nav {
+	/* Mobile Styles */
+	@apply absolute top-full w-4/5 right-0 before:bg-[rgba(0,0,0,.3)] before:w-screen before:h-screen before:absolute before:-z-10 before:-left-1/4;
+
+	/* Tablet Styles */
+	@apply md:col-span-8 md:col-start-3 md:justify-self-end md:before:hidden md:sticky md:w-full;
+
+	/* Desktop Styles */
+	/* @apply lg:col-start-4 */
+}
+
+nav ul {
+	/* Mobile Styles */
+	@apply block bg-white ease-in;
+	/* Desktop Styles */
+	@apply md:flex md:justify-around md:items-center;
+}
+
+nav ul li {
+	/* Mobile Styles */
+	@apply p-4 py-5;
+
+	@apply md:text-xs text-gray-900 font-normal capitalize;
+}
+
+.active {
+	@apply font-semibold text-secondary-main;
+}
+
+nav button {
+	/* Mobile Styles */
+	@apply rounded-full border p-2 m-4 px-5 border-secondary-main font-semibold
+
+	/* Tablet Styles */
+
+
+	/* Desktop Styles */;
+}
+
+.hamburger {
+	@apply col-start-6 text-2xl;
+}
