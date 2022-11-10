@@ -242,5 +242,5 @@
 }
 
 .how_we_work > div > div:last-child {
-	@apply lg:col-start-2 lg:row-start-1 lg:justify-self-end lg:my-5 px-10 2xl:min-w-[40rem] 2xl:ml-0 2xl:text-right 2xl:justify-self-start;
+	@apply lg:col-start-2 lg:row-start-1 lg:justify-self-end lg:my-5 px-10 2xl:min-w-[40rem] 2xl:ml-0 2xl:text-right 2xl:justify-self-start my-8;
 }
