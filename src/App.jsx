@@ -4,7 +4,7 @@
  */
 import './index.css';
 import Navbar from './components/Navbar/Navbar';
-
+import Footer from './components/Footer/Footer';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import useMediaQuery from './utils/useMediaQuery';
 import Impacts from './pages/Impacts';
@@ -35,6 +35,7 @@ function App() {
 					<Route exact path={'/impacts'} element={<Impacts />}></Route>
 					<Route exact path={'/about'} element={<About />}></Route>
 				</Routes>
+				<Footer></Footer>
 			</div>
 		</Router>
 	);

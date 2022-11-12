@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../../components/Footer/Footer';
 import styles from './Home.module.css';
 
 const Home = () => {
@@ -117,7 +118,7 @@ const Home = () => {
 						<button>Learn More</button>
 					</div>
 				</div>
-			</div>
+      </div>
 		</>
 	);
 };
