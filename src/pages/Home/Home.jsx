@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Footer from '../../components/Footer/Footer';
 import styles from './Home.module.css';
 
 const Home = () => {
+
+	const [email, setEmail] = useState('');
+
 	return (
 		<>
 			<div className={styles.hero}>
@@ -118,7 +121,16 @@ const Home = () => {
 						<button>Learn More</button>
 					</div>
 				</div>
-      </div>
+			</div>
+			<div className={styles.newsletter}>
+				<h2>
+					<span>Subscribe</span> to our newsletter
+				</h2>
+				<form>
+					<input type="email" placeholder='johndoe@gmail.com' />
+					<button type="submit">Subscribe</button>
+				</form>
+			</div>
 		</>
 	);
 };
