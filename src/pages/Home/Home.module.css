@@ -320,3 +320,88 @@
 .donations > div > div > div:nth-child(3) button{
 	@apply border-[#929292] hover:text-white hover:bg-[#929292]
 }	
+
+
+.stats > div{
+	@apply grid grid-cols-2 grid-rows-2 max-w-6xl w-11/12 mx-auto gap-4 my-36 gap-y-8;
+
+	@apply lg:grid-cols-3 lg:grid-rows-none
+}
+
+
+
+.beneficiaries{
+	@apply grid gap-x-2 grid-cols-2 justify-items-center items-center
+}
+
+.beneficiaries p:nth-of-type(1){
+	@apply col-span-2 text-sm;
+
+	@apply lg:text-base
+}
+
+.beneficiaries p:nth-of-type(2){
+	@apply font-bold justify-self-start text-2xl;
+
+	@apply lg:text-5xl
+}
+
+.beneficiaries p:nth-of-type(3){
+	@apply col-start-2 justify-self-start text-sm;
+
+	@apply lg:text-base
+}
+
+.support{
+	@apply grid gap-2 grid-cols-2 justify-items-center
+}
+
+.support p:nth-of-type(1){
+	@apply col-span-2 text-sm;
+
+	@apply lg:text-base
+}
+
+.support p:nth-of-type(2){
+	@apply font-bold justify-self-start text-2xl;
+
+	@apply lg:text-5xl
+}
+
+
+.support > div{
+	@apply w-full h-full text-right justify-self-end
+}
+.support img{
+	@apply h-full mx-auto
+}
+
+.support p:nth-of-type(3){
+	@apply col-start-2 justify-self-start text-sm;
+
+	@apply lg:text-base
+}
+
+.impact_record{
+	@apply grid gap-2 grid-cols-2 justify-items-center text-white items-center col-span-2;
+
+	@apply lg:col-span-1
+}
+
+.impact_record p{
+	@apply col-span-2 text-black text-base font-normal text-sm;
+
+	@apply lg:text-base
+}
+
+.impact_record button:nth-of-type(1){
+	@apply bg-secondary-main flex p-3 font-bold text-xl px-5 rounded-lg items-center hover:bg-secondary-light transition-all ease-in-out  duration-500
+}
+
+.impact_record > button > span{
+	@apply ml-3
+}
+
+.impact_record button:nth-of-type(2){
+	@apply bg-primary flex p-3 px-5 font-bold text-xl rounded-lg items-center hover:bg-opacity-70 transition-all ease-in-out  duration-500
+}

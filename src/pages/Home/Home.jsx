@@ -122,13 +122,48 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
+			<div className={styles.stats}>
+				<div>
+					<div className={styles.beneficiaries}>
+						<p>Number of Beneficiaries</p>
+						<div>
+							<img src="/assets/beneficiaries.svg" alt="" />
+						</div>
+						<p>100</p>
+						<p>Beneficiaries</p>
+					</div>
+					<div className={styles.support}>
+						<p>Amount of Support</p>
+						<div>
+							<img src="/assets/support.svg" alt="" />
+						</div>
+						<p>600k+</p>
+						<p>Support</p>
+					</div>
+					<div className={styles.impact_record}>
+						<p>Downloadable Impact Reports </p>
+						<button>
+							2021
+							<span>
+								<img src="/assets/records.svg" alt="" />
+							</span>
+						</button>
+						<button>
+							2022
+							<span>
+								<img src="/assets/records.svg" alt="" />
+							</span>
+						</button>
+					</div>
+				</div>
+			</div>
 			<div className={styles.donations}>
 				<div>
 					<h2>
 						<span>Donate</span> to Our cause
 					</h2>
 					<p>Join our network of donors and sponsors</p>
-					<div >
+					<div>
 						<div>
 							<h3>Become a Regular Donor</h3>
 							<button>Donate now</button>
