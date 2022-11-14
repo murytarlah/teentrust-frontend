@@ -122,12 +122,34 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
+			<div className={styles.donations}>
+				<div>
+					<h2>
+						<span>Donate</span> to Our cause
+					</h2>
+					<p>Join our network of donors and sponsors</p>
+					<div >
+						<div>
+							<h3>Become a Regular Donor</h3>
+							<button>Donate now</button>
+						</div>
+						<div>
+							<h3>Become a One Time Donor</h3>
+							<button>Donate now</button>
+						</div>
+						<div>
+							<h3>Donate to a Specific Project</h3>
+							<button>Donate now</button>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div className={styles.newsletter}>
 				<h2>
 					<span>Subscribe</span> to our newsletter
 				</h2>
 				<form>
-					<input type="email" placeholder='johndoe@gmail.com' />
+					<input type="email" placeholder="johndoe@gmail.com" />
 					<button type="submit">Subscribe</button>
 				</form>
 			</div>
