@@ -1,13 +1,22 @@
 import React, { useState } from 'react';
-import Footer from '../../components/Footer/Footer';
 import styles from './Home.module.css';
+import { BoardOfTrustees } from '../../_mocks/data';
+import Card from '../../components/Card/Card';
+import Page from '../../components/Page';
 
 const Home = () => {
 
 	const [email, setEmail] = useState('');
+	const [Board,setBoard] = useState(BoardOfTrustees)
 
+	const people = () => {
+		for (let i = 0; i < 4; i++) {
+			<Card color={"purple"} details={Board[i]} id={Board[i].id} />
+				
+		}
+	}
 	return (
-		<>
+		<Page title={"Home | TeenTrust"}>
 			<div className={styles.hero}>
 				<div className={styles.hero_content}>
 					<h3>Get started today!</h3>
@@ -157,6 +166,18 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
+			<div className={styles.people_section}>
+				<h2>Our People</h2>
+				<div className={styles.ps_content}>
+					<p>We have a network of professionals working to ensure we deliver on our vision and mission.</p>
+				</div>
+				<div className={styles.people}>
+					{Board.map((member, index) => {
+						return index < 4 && <Card color={'purple'} details={member} id={member.id} />
+					})}
+				</div>
+				<button>See all</button>
+			</div>
 			<div className={styles.donations}>
 				<div>
 					<h2>
@@ -188,7 +209,7 @@ const Home = () => {
 					<button type="submit">Subscribe</button>
 				</form>
 			</div>
-		</>
+		</Page>
 	);
 };
 

@@ -10,7 +10,7 @@ import useMediaQuery from './utils/useMediaQuery';
 import Impacts from './pages/Impacts';
 import HowWeWork from './pages/HowWeWork';
 import Contact from './pages/Contact';
-import About from './pages/About';
+import About from './pages/About/About';
 import Home from './pages/Home/Home';
 
 //--------------------------------------------------------------
