@@ -1,9 +1,35 @@
 import React, { useState } from 'react';
 import Footer from '../../components/Footer/Footer';
 import styles from './Home.module.css';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Autoplay, Pagination, Navigation } from 'swiper';
+import StoryCard from '../../components/carousel/StoryCard';
+const navigation = {
+	nextEl: '.control-next',
+	prevEl: '.control-prev',
+};
+const storiesData = [
+	{
+		story: 'When I see my mates going to school while I hawk sachet water to feed, I feel sad, helpless and unhappy',
+		name: 'Timilehin',
+	},
+	{
+		story: ' Our mother was the sole sponsor of our education. I was embittered and shocked when we lost her in the ghastly accident',
+		name: 'Taiwo',
+	},
+	{
+		story: 'When I see my mates going to school while I hawk sachet water to feed, I feel sad, helpless and unhappy',
+		name: 'Taiwo',
+	},
+	{
+		story: ' Our mother was the sole sponsor of our education. I was embittered and shocked when we lost her in the ghastly accident',
+		name: 'Timileyin',
+	},
+];
 
 const Home = () => {
-
 	const [email, setEmail] = useState('');
 
 	return (
@@ -122,13 +148,67 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
+			<section>
+				<div className={styles.stories}>
+					<div className="flex items-center justify-between relative">
+						<h2>
+							Their <span>Stories</span>
+						</h2>
+						<div className="control-btn-con flex gap-4">
+							<div className="control-prev w-10 h-10 rounded-full bg-secondary-main flex justify-center items-center">
+								p
+							</div>
+							<div className="control-next w-10 h-10 rounded-full bg-secondary-main flex justify-center items-center">
+								n
+							</div>
+						</div>
+					</div>
+				</div>
+				<div className="carousel">
+					<Swiper
+						// slidesPerView={3}
+						loop={true}
+						loopFillGroupWithBlank={true}
+						spaceBetween={30}
+						centeredSlides={true}
+						autoplay={{
+							delay: 2500,
+							disableOnInteraction: false,
+						}}
+						breakpoints={{
+							// when window width is >= 640px
+							640: {
+							  width: 640,
+							  slidesPerView: 1,
+							},
+							// when window width is >= 768px
+							768: {
+							  width: 768,
+							  slidesPerView: 2,
+							},
+						  }}
+						navigation={navigation}
+						modules={[Autoplay, Navigation]}
+						className="mySwiper"
+					>
+						{storiesData.map((storyDet, idx) => (
+							<SwiperSlide key={idx}>
+								<StoryCard
+									story={storyDet.story}
+									name={storyDet.name}
+								/>
+							</SwiperSlide>
+						))}
+					</Swiper>
+				</div>
+			</section>
 			<div className={styles.newsletter}>
 				<h2>
 					<span>Subscribe</span> to our newsletter
 				</h2>
 				<form>
-					<input type="email" placeholder='johndoe@gmail.com' />
-					<button type="submit">Subscribe</button>
+					<input type="email" placeholder="johndoe@gmail.com" />
+					<butxton type="submit">Subscribe</butxton>
 				</form>
 			</div>
 		</>

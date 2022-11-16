@@ -9,7 +9,7 @@ module.exports = {
 					light: '#2ACC32',
 				},
 				primary: '#950195',
-				paleblue: '#F5FBFC',
+				paleblue: '#F5FBFC'
 			},
 			animation: {
 				'pulse-once': 'pulse_once 800ms linear',
