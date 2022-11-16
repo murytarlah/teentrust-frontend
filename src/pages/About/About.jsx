@@ -39,15 +39,19 @@ const About = () => {
 			</div>
 			<div className={styles.content_2}>
 				<div className={styles.content}>
+					<div>
+						<div>
+							<img src="/assets/eh-funding.png" alt="" />
+						</div>
+						<h3>Education and Health Support/Funding</h3>
+					</div>
 					<p>
-						At Teens Trust Foundation (TTF), we are working to enhance pre-primary, primary and secondary education as
-						well as prompt access to health services for the less privileged Nigerian children and teen population, in
-						particular, and Africa, in general. Our goal is to enhance the successful implementation of the Sustainable
-						Development Goals on education and health (SDG3 and SDG 4) among these young generation in the continent.
-					</p>
-					<p>
-						We have a team of professionals in the health, education and other relevant industries jointly working to
-						enhance a better future for children and teenagers through access to quality education and good health.
+						We receive health support requests for children through the public, our health support team and through
+						primary health centers. These requests are screened, on a case-by-case basis, by our health support office
+						and legal team concurrently. Cases that pass these screening are then passed to our finance team who
+						recommends funds accordingly. Final approval for funding is given by Office of the Executive Director for
+						cases requiring small to medium funding. Management approval is required for cases requiring maximum
+						funding.
 					</p>
 				</div>
 				<h2>
@@ -90,17 +94,17 @@ const About = () => {
 					<ul>
 						<li>To enhance the achievement of the world’s target of better health among less privileged teenagers.</li>
 						<li>
-							To enhance the achievement of the world’s target of basic and secondary education among less privileged teenagers.
+							To enhance the achievement of the world’s target of basic and secondary education among less privileged
+							teenagers.
 						</li>
 						<li>
-							To identify and give comprehensive support to African less privileged teenagers with genuine need for primary and/or secondary education support.
+							To identify and give comprehensive support to African less privileged teenagers with genuine need for
+							primary and/or secondary education support.
 						</li>
 						<li>
 							To identify and give comprehensive support to African less privileged teenagers with urgent health needs.
 						</li>
-						<li>
-							To give a general education and health support to the less privileged African child.
-						</li>
+						<li>To give a general education and health support to the less privileged African child.</li>
 					</ul>
 				</div>
 			</div>
