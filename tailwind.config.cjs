@@ -4,7 +4,14 @@ module.exports = {
 	theme: {
 		extend: {
 			backgroundImage: {
-				"vector": "url(/assets/Vector.svg)"
+				"vector": "url(/assets/Vector.svg)",
+				"i-hero": "linear-gradient(90deg, #F5FBFC 3.06%, rgba(237, 237, 237, 0) 30.87%),url(/assets/impacts.png)",
+				"i-hero-m": "linear-gradient(180deg, #F5FBFC 3.06%, rgba(237, 237, 237, 0) 30.87%),url(/assets/impacts.png)",
+				"p-hero": "linear-gradient(90deg, #F5FBFC 3.06%, rgba(237, 237, 237, 0) 30.87%),url(/assets/people.png)",
+				"p-hero-m": "linear-gradient(180deg, #F5FBFC 3.06%, rgba(237, 237, 237, 0) 30.87%),url(/assets/people.png)",
+				"c-hero": "linear-gradient(90deg, #F5FBFC 3.06%, rgba(237, 237, 237, 0) 30.87%),url(/assets/contact.png)",
+				"c-hero-m": "linear-gradient(180deg, #F5FBFC 3.06%, rgba(237, 237, 237, 0) 30.87%),url(/assets/contact.png)"
+
 			},
 			colors: {
 				secondary: {

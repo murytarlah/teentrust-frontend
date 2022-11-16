@@ -22,7 +22,11 @@
 	@apply flex items-center mb-5
 }
 .contacts > div > img{
-	@apply w-1/12 mr-5
+	@apply w-[9%] md:w-1/12 flex-wrap
+}
+
+.contacts > div > p{
+	@apply text-sm ml-3
 }
 
 .logo img {

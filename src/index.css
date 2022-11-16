@@ -5,4 +5,12 @@
 
 * {
 	font-family: 'Montserrat';
+	@apply text-[#4A4A4A]
+}
+
+h1, h2, h3, h4{
+	@apply text-[#282828];
+}
+p{
+	@apply text-justify
 }

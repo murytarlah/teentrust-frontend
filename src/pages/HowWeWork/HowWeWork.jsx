@@ -56,7 +56,7 @@ const HowWeWork = () => {
 					<p>
 						You can submit an education or health support request by clicking <Link to={'mailto:'}>here</Link>. For
 						enquiries on health or education support please reach out to{' '}
-						<span>health.support@teenstrustfoundation.org </span> or{' '}
+						<span>health.support@ <br/> teenstrustfoundation.org </span> or{' '}
 						<span>
 							education.support@ <br /> teenstrustfoundation.org
 						</span>{' '}

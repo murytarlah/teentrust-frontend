@@ -1,0 +1,134 @@
+.hero{
+	@apply relative py-40 pb-52 lg:py-32 bg-[#F5FBFC] text-center;
+
+	@apply  after:absolute after:top-[60%] after:h-2/5 after:bg-i-hero-m lg:after:top-0 after:left-0 lg:after:left-1/2 after:w-full lg:after:w-1/2 lg:after:h-full lg:after:bg-i-hero after:bg-cover after:bg-no-repeat
+}
+
+.hero > div{
+	@apply grid grid-cols-1 gap-5 grid-rows-1 justify-items-center items-center max-w-5xl mx-auto;
+
+	/* Destop Styles */
+	@apply lg:grid-cols-2;
+}
+
+.hero > div > h1{
+	@apply capitalize text-3xl lg:text-4xl font-bold my-5 tracking-widest
+}
+
+
+.projects{
+	@apply max-w-7xl mx-auto my-16
+}
+
+.projects h2{
+	@apply text-2xl md:text-3xl font-semibold w-4/5 mx-auto my-8
+}
+
+.project2, .project1{
+	@apply w-4/5 mx-auto
+}
+
+.p_header{
+	@apply grid grid-cols-[repeat(2,minmax(0,auto))] w-full lg:w-2/5  items-center
+}
+
+.p_header h3{
+	@apply text-xl md:text-2xl font-semibold
+}
+
+.p_header > div{
+	@apply rounded-full h-20 w-20 bg-secondary-main bg-opacity-10 p-5
+}
+
+.p_header > div> img{
+	@apply w-full h-full
+}
+
+.project_info{
+	@apply w-full mx-auto my-5 max-w-6xl grid grid-cols-1 gap-5 p-3 justify-between text-[#4A4A4A];
+
+	@apply lg:grid-cols-2 lg:grid-rows-[repeat(4,minmax(0px,130px))]
+}
+.project_info > div:nth-child(3){
+	@apply lg:col-span-2
+}
+
+.project_info > div:nth-child(3) > p{
+	@apply my-4 max-w-full text-[#4A4A4A]
+}
+
+.project_info > div:nth-child(3) > p a{
+	@apply text-secondary-main italic
+}
+
+.project_info > div:nth-child(3) > p span{
+	@apply font-semibold
+}
+
+.project_info > div:nth-child(3) > p br{
+	@apply sm:hidden
+}
+
+.project_info > div:nth-child(1){
+	@apply lg:row-span-3 lg:flex lg:flex-col text-lg
+}
+
+.project_info > div:nth-child(1) p{
+	@apply mb-10
+}
+
+.project_info > div:nth-child(2){
+	/* @apply lg:w-max; */
+
+	@apply lg:row-span-3 lg:col-start-1 lg:row-start-1 lg:flex lg:justify-start
+}
+
+.project_info > div:nth-child(2) > img{
+	@apply w-full h-auto lg:w-auto lg:h-full
+}
+
+
+.p_details{
+	@apply w-full mx-auto my-6 max-w-6xl grid grid-cols-1 gap-5 p-3 justify-between;
+
+	@apply lg:grid-cols-2 lg:grid-rows-[repeat(4,minmax(0px,120px))]
+}
+
+.p_details > .content{
+	@apply lg:row-start-1 lg:col-start-1 lg:row-span-3 
+}
+
+.p_details > .content > p{
+	@apply my-5 mb-16
+}
+
+
+.p_details > div:nth-of-type(2){
+	@apply row-start-1;
+
+	@apply lg:row-span-4 lg:col-start-2 lg:row-start-1 lg:flex lg:justify-end
+}
+
+.p_details > div > img{
+	@apply w-full h-auto lg:w-auto lg:h-full mr-0
+}
+
+.p_details h2{
+	@apply text-2xl font-bold mt-7 lg:col-start-1
+}
+
+
+.p_details > h2 > span{
+	@apply text-secondary-main
+}
+
+
+.project2 .p_details > .content{
+	@apply lg:row-start-1 lg:col-start-2 lg:row-span-3 
+}
+
+.project2 .p_details > div:nth-of-type(2){
+	@apply row-start-1;
+
+	@apply lg:row-span-4 lg:col-start-1 lg:row-start-1 lg:flex lg:justify-start
+}

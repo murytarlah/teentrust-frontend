@@ -49,16 +49,23 @@ const navigations = [
  * @main : Navbar
  *
  */
-const Navbar = ({ isDesktop }) => {
+const Navbar = ({ isDesktop, isMobile }) => {
 	const is_desktop = isDesktop;
-
 	const [showMenu, setShowMenu] = useState(false);
 	const { pathname } = useLocation();
 	const match = (path) => (path ? !!matchPath({ path, end: false }, pathname) : false);
-
+	
 	useEffect(() => {
-		isDesktop ? setShowMenu(true) : setShowMenu(false);
-	}, [is_desktop]);
+		if (isMobile) {
+			setShowMenu(false);
+		}
+	}, [isMobile]);
+	useEffect(() => {
+		if (isDesktop) {
+			setShowMenu(true)
+		}
+	}, [isDesktop,showMenu]);
+
 	const navElement = (
 		<nav>
 			<ul>
@@ -82,15 +89,16 @@ const Navbar = ({ isDesktop }) => {
 			</ul>
 		</nav>
 	);
-
+	console.log(isDesktop,showMenu)
+	
 	return (
 		<header>
 			<div className={styles.logo}>
 				<img src="/assets/logo.png" alt="" />
 			</div>
-			{!is_desktop && showMenu && navElement}
-			{is_desktop && showMenu && navElement}
-			{!is_desktop && (
+			{!isDesktop && showMenu && navElement}
+			{isDesktop && showMenu && navElement}
+			{!isDesktop && (
 				<div className={styles.hamburger} onClick={() => setShowMenu(!showMenu)}>
 					<Icon icon={showMenu ? 'ep:close' : 'quill:hamburger'} />
 				</div>
