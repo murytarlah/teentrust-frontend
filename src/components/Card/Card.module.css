@@ -19,7 +19,7 @@
 }
 
 .card_p > div > div{
-	@apply w-full rounded-xl relative after:absolute after:w-full after:h-full after:border-[5px] after:border-primary after:top-0 after:left-0 after:border-opacity-30 after:rounded-xl min-w-[271px] lg:min-w-fit min-h-[240px] lg:min-h-0 flex justify-center items-center
+	@apply w-full rounded-xl relative after:absolute after:w-full after:h-full after:border-[5px] after:border-primary after:top-0 after:left-0 after:border-opacity-30 after:rounded-xl  lg:min-w-fit min-h-[240px] lg:min-h-0 flex justify-center items-center
 }
 
 .card_g > div > div > img{

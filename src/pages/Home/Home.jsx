@@ -1,22 +1,36 @@
 import React, { useState } from 'react';
 import styles from './Home.module.css';
-import { BoardOfTrustees } from '../../_mocks/data';
+import { BoardOfTrustees, pApps } from '../../_mocks/data';
 import Card from '../../components/Card/Card';
 import Page from '../../components/Page';
+import NiceModal from '@ebay/nice-modal-react';
+import Modal from '../../components/modals/pAppModal';
 
 const Home = () => {
 
 	const [email, setEmail] = useState('');
 	const [Board,setBoard] = useState(BoardOfTrustees)
 
+
+	const emailSubscribe = () => {
+		
+	}
 	const people = () => {
 		for (let i = 0; i < 4; i++) {
 			<Card color={"purple"} details={Board[i]} id={Board[i].id} />
 				
 		}
 	}
+	const [windowOffset, setWindowOffset] = useState(0);
+
+	const showAddModal = (id) => {
+		setWindowOffset(window.scrollY);
+		document.querySelector('.App').style = `position: fixed; top: -${windowOffset}px; left: 0; right: 0;`;
+		NiceModal.show(Modal, { id });
+	};
+
 	return (
-		<Page title={"Home | TeenTrust"}>
+		<Page title={'Home | TeenTrust'}>
 			<div className={styles.hero}>
 				<div className={styles.hero_content}>
 					<h3>Get started today!</h3>
@@ -108,21 +122,14 @@ const Home = () => {
 								partners, project partners or administrative partners.
 							</p>
 							<div className={styles.p_apps}>
-								<div>
-									<img src="/assets/google-for-nonprofits-twitter.png" alt="" />
-								</div>
-								<div>
-									<img src="/assets/kobi.png" alt="" />
-								</div>
-								<div>
-									<img src="/assets/slack-for-nonprofits-twitter.png" alt="" />
-								</div>
-								<div>
-									<img src="/assets/techsoup.png" alt="" />
-								</div>
-								<div>
-									<img src="assets/aimoc 1.png" alt="" />
-								</div>
+								{
+									// console.log(pApps);
+									pApps.map((ele) => (
+										<div id={ele.id} ey={ele.id} onClick={() => showAddModal(ele.id)}>
+											<img src={ele.image} alt="" />
+										</div>
+									))
+								}
 							</div>
 						</div>
 					</div>
@@ -173,7 +180,7 @@ const Home = () => {
 				</div>
 				<div className={styles.people}>
 					{Board.map((member, index) => {
-						return index < 4 && <Card color={'purple'} details={member} id={member.id} />
+						return index < 4 && <Card color={'purple'} details={member} id={member.id} />;
 					})}
 				</div>
 				<button>See all</button>
@@ -204,8 +211,8 @@ const Home = () => {
 				<h2>
 					<span>Subscribe</span> to our newsletter
 				</h2>
-				<form>
-					<input type="email" placeholder="johndoe@gmail.com" />
+				<form onSubmit={emailSubscribe}>
+					<input type="email" placeholder="johndoe@gmail.com"  onChange={(e)=>setEmail(e.target.value)}/>
 					<button type="submit">Subscribe</button>
 				</form>
 			</div>

@@ -2,8 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Page from '../../components/Page';
 import styles from './HowWeWork.module.css';
+import { pApps } from '../../_mocks/data';
+import NiceModal from '@ebay/nice-modal-react';
+import Modal from '../../components/modals/pAppModal';
 
 const HowWeWork = () => {
+
+	const showAddModal = (id) => {
+		NiceModal.show(Modal, { id });
+	};
+
 	return (
 		<Page title={'How We Work | TeenTrust'}>
 			<div className={styles.main}>
@@ -127,21 +135,14 @@ const HowWeWork = () => {
 				</div>
 			</div>
 			<div className={styles.p_apps}>
-				<div>
-					<img src="/assets/google-for-nonprofits-twitter.png" alt="" />
-				</div>
-				<div>
-					<img src="/assets/kobi.png" alt="" />
-				</div>
-				<div>
-					<img src="/assets/slack-for-nonprofits-twitter.png" alt="" />
-				</div>
-				<div>
-					<img src="/assets/techsoup.png" alt="" />
-				</div>
-				<div>
-					<img src="assets/aimoc 1.png" alt="" />
-				</div>
+				{
+					// console.log(pApps);
+					pApps.map((ele) =>
+						<div id={ele.id} key={ele.id} onClick={() => showAddModal(ele.id)}>
+							<img src={ele.image} alt="" />
+						</div>		
+					)
+				}
 			</div>
 			<div className={styles.ms_vs}>
 				<div>

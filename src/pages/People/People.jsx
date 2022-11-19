@@ -4,12 +4,21 @@ import styles from './People.module.css'
 import { BoardOfDirectors_Management, BoardOfTrustees, Volunteers, } from '../../_mocks/data';
 import Card from '../../components/Card/Card';
 import { Link } from 'react-router-dom';
+import NiceModal from '@ebay/nice-modal-react';
+import Modal from '../../components/modals/PersonModal';
 
 const People = () => {
 
 	const [BOfT, setBOfT] = useState(BoardOfTrustees);
 	const [volunteers, setVolunteers] = useState(Volunteers);
 	const [BOfD, setBOfD] = useState(BoardOfDirectors_Management);
+	const [windowOffset, setWindowOffset] = useState(0);
+
+	const showAddModal = (id) => {
+		setWindowOffset(window.scrollY)
+		document.querySelector('.App').style = `position: fixed; top: -${windowOffset}px; left: 0; right: 0;`
+		NiceModal.show(Modal, {id});
+	};
 
 	return (
 		<Page title={'People | TeenTrust'}>
@@ -32,7 +41,7 @@ const People = () => {
 				</div>
 				<div className={styles.members}>
 					{BOfT.map((member) => {
-						return <Card color={'purple'} details={member} key={member.id} id={member.id} />;
+						return <Card color={'purple'} details={member} handleClick={(id)=>{showAddModal(id)}} key={member.id} id={member.id} />;
 					})}
 				</div>
 			</div>

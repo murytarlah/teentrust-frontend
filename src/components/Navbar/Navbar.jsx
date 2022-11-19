@@ -27,7 +27,7 @@ const navigations = [
 	},
 	{
 		title: 'how we work',
-		path: '/mode',
+		path: '/culture',
 	},
 	{
 		title: 'impacts & reports',
