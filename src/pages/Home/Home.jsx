@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Footer from '../../components/Footer/Footer';
 import styles from './Home.module.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -28,12 +27,22 @@ const storiesData = [
 		name: 'Timileyin',
 	},
 ];
+import { BoardOfTrustees } from '../../_mocks/data';
+import Card from '../../components/Card/Card';
+import Page from '../../components/Page';
 
 const Home = () => {
 	const [email, setEmail] = useState('');
+	const [Board,setBoard] = useState(BoardOfTrustees)
 
+	const people = () => {
+		for (let i = 0; i < 4; i++) {
+			<Card color={"purple"} details={Board[i]} id={Board[i].id} />
+				
+		}
+	}
 	return (
-		<>
+		<Page title={"Home | TeenTrust"}>
 			<div className={styles.hero}>
 				<div className={styles.hero_content}>
 					<h3>Get started today!</h3>
@@ -202,16 +211,85 @@ const Home = () => {
 					</Swiper>
 				</div>
 			</section>
+			<div className={styles.stats}>
+				<div>
+					<div className={styles.beneficiaries}>
+						<p>Number of Beneficiaries</p>
+						<div>
+							<img src="/assets/beneficiaries.svg" alt="" />
+						</div>
+						<p>100</p>
+						<p>Beneficiaries</p>
+					</div>
+					<div className={styles.support}>
+						<p>Amount of Support</p>
+						<div>
+							<img src="/assets/support.svg" alt="" />
+						</div>
+						<p>600k+</p>
+						<p>Support</p>
+					</div>
+					<div className={styles.impact_record}>
+						<p>Downloadable Impact Reports </p>
+						<button>
+							2021
+							<span>
+								<img src="/assets/records.svg" alt="" />
+							</span>
+						</button>
+						<button>
+							2022
+							<span>
+								<img src="/assets/records.svg" alt="" />
+							</span>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div className={styles.people_section}>
+				<h2>Our People</h2>
+				<div className={styles.ps_content}>
+					<p>We have a network of professionals working to ensure we deliver on our vision and mission.</p>
+				</div>
+				<div className={styles.people}>
+					{Board.map((member, index) => {
+						return index < 4 && <Card color={'purple'} details={member} id={member.id} />
+					})}
+				</div>
+				<button>See all</button>
+			</div>
+			<div className={styles.donations}>
+				<div>
+					<h2>
+						<span>Donate</span> to Our cause
+					</h2>
+					<p>Join our network of donors and sponsors</p>
+					<div>
+						<div>
+							<h3>Become a Regular Donor</h3>
+							<button>Donate now</button>
+						</div>
+						<div>
+							<h3>Become a One Time Donor</h3>
+							<button>Donate now</button>
+						</div>
+						<div>
+							<h3>Donate to a Specific Project</h3>
+							<button>Donate now</button>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div className={styles.newsletter}>
 				<h2>
 					<span>Subscribe</span> to our newsletter
 				</h2>
 				<form>
 					<input type="email" placeholder="johndoe@gmail.com" />
-					<butxton type="submit">Subscribe</butxton>
+					<button type="submit">Subscribe</button>
 				</form>
 			</div>
-		</>
+		</Page>
 	);
 };
 

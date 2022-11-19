@@ -262,12 +262,172 @@
 .newsletter form button{
 	@apply bg-secondary-main text-white p-2 px-5 font-semibold rounded-lg my-3
 }
-/* Stories Section Styles */
-.stories{
-	/* @apply p-4  mx-auto  my-20 */
-	@apply w-11/12 mx-auto
+
+.donations > div{
+	@apply max-w-6xl w-11/12 mx-auto
 }
 
-.stories h2{
-	@apply text-2xl font-semibold my-5
+.donations > div h2{
+	@apply col-span-3 text-2xl font-bold my-5 text-center;
+
+	@apply lg:text-left
+}
+
+.donations > div p{
+	@apply col-span-3 my-5 text-center;
+
+	@apply lg:text-left
+}
+
+.donations > div > div{
+	@apply grid w-4/5 mx-auto;
+	
+	@apply lg:grid-cols-3 lg:w-full
+}
+
+.donations > div > div > div{
+	@apply rounded-lg  p-3
+}
+
+.donations > div > div > div > h3{
+	@apply text-xl font-semibold my-5 w-2/3
+}
+
+.donations > div > div  div > button{
+	@apply text-xs p-2 px-4 border-2 rounded-lg my-3 transition-colors ease-in-out duration-500
+}
+
+.donations > div > div > div:nth-child(1){
+	@apply bg-secondary-main bg-opacity-[0.14]
+}
+
+.donations > div > div > div:nth-child(2){
+	@apply bg-primary bg-opacity-[0.14]
+}
+
+.donations > div > div > div:nth-child(3){
+	@apply bg-[#929292] bg-opacity-[0.14]
+}
+
+.donations > div > div > div:nth-child(1) button{
+	@apply border-secondary-main hover:text-white hover:bg-secondary-main
+}
+
+.donations > div > div > div:nth-child(2) button{
+	@apply border-primary hover:text-white hover:bg-primary
+}
+
+.donations > div > div > div:nth-child(3) button{
+	@apply border-[#929292] hover:text-white hover:bg-[#929292]
+}	
+
+
+.stats > div{
+	@apply grid grid-cols-2 grid-rows-2 max-w-6xl w-11/12 mx-auto gap-4 my-36 gap-y-8;
+
+	@apply lg:grid-cols-3 lg:grid-rows-none
+}
+
+
+
+.beneficiaries{
+	@apply grid gap-x-2 grid-cols-2 justify-items-center items-center
+}
+
+.beneficiaries p:nth-of-type(1){
+	@apply col-span-2 text-sm;
+
+	@apply lg:text-base
+}
+
+.beneficiaries p:nth-of-type(2){
+	@apply font-bold justify-self-start text-2xl;
+
+	@apply lg:text-5xl
+}
+
+.beneficiaries p:nth-of-type(3){
+	@apply col-start-2 justify-self-start text-sm;
+
+	@apply lg:text-base
+}
+
+.support{
+	@apply grid gap-2 grid-cols-2 justify-items-center
+}
+
+.support p:nth-of-type(1){
+	@apply col-span-2 text-sm;
+
+	@apply lg:text-base
+}
+
+.support p:nth-of-type(2){
+	@apply font-bold justify-self-start text-2xl;
+
+	@apply lg:text-5xl
+}
+
+
+.support > div{
+	@apply w-full h-full text-right justify-self-end
+}
+.support img{
+	@apply h-full mx-auto
+}
+
+.support p:nth-of-type(3){
+	@apply col-start-2 justify-self-start text-sm;
+
+	@apply lg:text-base
+}
+
+.impact_record{
+	@apply grid gap-2 grid-cols-2 justify-items-center text-white items-center col-span-2;
+
+	@apply lg:col-span-1
+}
+
+.impact_record p{
+	@apply col-span-2 text-black text-base font-normal text-sm;
+
+	@apply lg:text-base
+}
+
+.impact_record button:nth-of-type(1){
+	@apply bg-secondary-main flex p-3 font-bold text-xl px-5 rounded-lg items-center hover:bg-secondary-light transition-all ease-in-out  duration-500
+}
+
+.impact_record > button > span{
+	@apply ml-3
+}
+
+.impact_record button:nth-of-type(2){
+	@apply bg-primary flex p-3 px-5 font-bold text-xl rounded-lg items-center hover:bg-opacity-70 transition-all ease-in-out  duration-500
+}
+
+.people_section{
+	@apply w-11/12 mx-auto my-10 max-w-6xl grid gap-y-5 justify-items-center grid-cols-1 items-center;
+
+	@apply lg:grid lg:grid-cols-2 lg:grid-rows-[repeat(minmax(0px,auto))] lg:gap-5
+}
+
+.people_section h2{
+	 @apply text-2xl font-bold my-5 col-span-2 lg:justify-self-start p-3
+}
+
+.ps_content{
+	@apply p-3
+}
+
+.people_section button{
+	@apply p-3 px-5 bg-secondary-main bg-opacity-20 text-secondary-main hover:bg-opacity-100 hover:text-white transition-all duration-500 font-semibold rounded-lg justify-self-start mx-5;
+
+	@apply lg:col-start-2 lg:row-start-2 lg:justify-self-end 
+}
+
+.people{
+	@apply my-10 grid gap-y-10 mx-auto col-span-2;
+
+	@apply lg:grid lg:grid-cols-4 lg:gap-10 lg:mb-36
 }

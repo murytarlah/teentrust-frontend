@@ -1,0 +1,167 @@
+.main{
+	@apply w-4/5 mx-auto my-10 max-w-6xl grid grid-cols-1 gap-5 p-3 justify-between text-[#4A4A4A];
+
+	@apply lg:grid-cols-2 lg:grid-rows-[repeat(4,minmax(0px,130px))]
+}
+
+.main > .m_content{
+	@apply lg:row-start-2 lg:col-start-1 lg:row-span-3 lg:flex lg:flex-col lg:justify-evenly
+}
+
+.main > .m_content h3{
+	@apply text-3xl w-4/5 my-5 leading-snug font-medium
+}
+
+.main > .m_content > p{
+	@apply my-5 mb-16 
+}
+
+
+.main > div:nth-of-type(2){
+	@apply lg:w-max;
+
+	@apply lg:row-span-4 lg:col-start-2 lg:row-start-1 lg:flex lg:justify-end
+}
+
+.main > div:nth-of-type(2) > img{
+	@apply w-full h-auto lg:w-auto lg:h-full mr-0
+}
+
+.main h1{
+	@apply text-4xl font-bold mt-7 lg:col-start-1
+}
+
+
+.main > h1 > span{
+	@apply text-secondary-main
+}
+
+
+.hww_content_1{
+	@apply w-4/5 mx-auto my-28 max-w-6xl grid grid-cols-1 gap-5 p-3 justify-between text-[#4A4A4A];
+
+	@apply lg:grid-cols-2 lg:grid-rows-[repeat(4,minmax(0px,130px))]
+}
+.hww_content_1 > div:nth-child(3){
+	@apply lg:col-span-2
+}
+
+.hww_content_1 > div:nth-child(3) > p{
+	@apply my-4 max-w-full text-[#4A4A4A]
+}
+
+.hww_content_1 > div:nth-child(3) > p a{
+	@apply text-secondary-main italic
+}
+
+.hww_content_1 > div:nth-child(3) > p span{
+	@apply font-semibold
+}
+
+.hww_content_1 > div:nth-child(3) > p br{
+	@apply sm:hidden
+}
+
+.hww_content_1 > div:nth-child(1){
+	@apply lg:row-span-3 lg:flex lg:flex-col lg:justify-evenly
+}
+
+.hww_content_1 > div:nth-child(2){
+	/* @apply lg:w-max; */
+
+	@apply lg:row-span-3 lg:col-start-1 lg:row-start-1 lg:flex lg:justify-start
+}
+
+.hww_content_1 > div:nth-child(2) > img{
+	@apply w-full h-auto lg:w-auto lg:h-full mr-0
+}
+
+
+
+.hww_content_2, .hww_content_3{
+	@apply w-4/5 mx-auto my-20 max-w-6xl grid grid-cols-1 gap-5 p-3 justify-between text-[#4A4A4A];
+
+	@apply lg:grid-cols-2 lg:grid-rows-[repeat(4,minmax(0px,130px))]
+}
+.hww_content_2 > div:nth-child(3), .hww_content_3 > div:nth-child(3){
+	@apply lg:col-span-2
+}
+
+.hww_content_2 > div:nth-child(3) > p, .hww_content_3 > div:nth-child(3) > p{
+	@apply my-4 max-w-full text-[#4A4A4A]
+}
+
+.hww_content_2 > div:nth-child(3) > p a, .hww_content_3 > div:nth-child(3) > p a{
+	@apply text-secondary-main italic
+}
+
+.hww_content_2 > div:nth-child(3) > p span, .hww_content_3 > div:nth-child(3) > p span{
+	@apply font-semibold
+}
+
+.hww_content_2 > div:nth-child(3) > p br, .hww_content_3 > div:nth-child(3) > p br{
+	@apply sm:hidden
+}
+
+.hww_content_2 > div:nth-child(1), .hww_content_3 > div:nth-child(1){
+	@apply lg:row-span-3 lg:flex lg:flex-col lg:justify-evenly
+}
+
+.hww_content_2 > div:nth-child(1) > div h3, .hww_content_3 > div:nth-child(1) > div h3{
+	@apply text-3xl w-4/5 my-5 leading-snug font-medium
+}
+
+
+.hww_content_2 > div:nth-child(2), .hww_content_3 > div:nth-child(2){
+	/* @apply lg:w-max; */
+
+	@apply lg:row-span-3 lg:col-start-2 lg:row-start-1 lg:flex lg:justify-start
+}
+
+.hww_content_2 > div:nth-child(2) > img, .hww_content_3 > div:nth-child(2) > img{
+	@apply w-full h-auto lg:w-auto lg:h-full mr-0
+}
+
+.p_apps {
+	@apply col-span-4 grid grid-cols-[repeat(6,minmax(0px,1fr))] grid-rows-[repeat(2,minmax(0px,1fr))] w-full justify-items-center items-center mx-auto text-center max-w-3xl;
+
+	@apply lg:mx-auto lg:grid-cols-[repeat(5,minmax(0px,1fr))] lg:grid-rows-none;
+}
+
+.p_apps > div:nth-child(1),
+.p_apps > div:nth-child(2),
+.p_apps > div:nth-child(3) {
+	@apply col-span-2;
+
+	@apply lg:col-auto;
+}
+
+.p_apps > div:nth-child(4) {
+	@apply col-start-2 col-span-2;
+	@apply lg:col-auto;
+}
+
+.p_apps > div:nth-child(5) {
+	@apply col-start-5 col-span-1;
+	@apply lg:col-auto;
+}
+
+
+.ms_vs > div{
+	@apply  max-w-6xl mx-auto grid gap-10 p-5 w-4/5 text-[#4A4A4A] my-16;
+
+	@apply lg:grid-cols-2
+}
+
+
+.mission div, .vission div{
+	@apply rounded-full
+}
+
+.mission div > img, .vission div > img{
+	@apply w-1/5 h-auto
+}
+
+.mission h3, .vission h3{
+	@apply font-medium text-2xl my-5
+}
