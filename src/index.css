@@ -5,6 +5,7 @@
 
 * {
 	font-family: 'Montserrat';
+	@apply text-[#4A4A4A]
 }
 
 .swiper {
@@ -25,3 +26,13 @@
 	height: 100%;
 	object-fit: cover;
   }
+h1, h2, h3, h4, h1 > *, h2 > *, h3 > *, h4 > *{
+	@apply text-[#282828];
+}
+p{
+	@apply text-justify
+}
+
+.app{
+	@apply relative
+}

@@ -219,6 +219,10 @@
 	@apply lg:mx-auto lg:grid-cols-[repeat(5,minmax(0px,1fr))] lg:grid-rows-none;
 }
 
+.p_apps > div{
+	@apply cursor-pointer
+}
+
 .p_apps > div:nth-child(1),
 .p_apps > div:nth-child(2),
 .p_apps > div:nth-child(3) {

@@ -2,12 +2,19 @@ import React from 'react';
 import styles from './Card.module.css'
 // import pics from '../../../public/assets/Reactangle'
 
-const Card = ({color, id, details}) => {
+const Card = ({color, id, details, handleClick}) => {
 	return (
-		<div className={color == 'green' ? styles.card_g : styles.card_p} onClick={() => id}>
+		<div className={color == 'green' ? styles.card_g : styles.card_p} onClick={handleClick && (() => handleClick(id))}>
 			<div>
 				<div>
-					<img src={details.image} alt="" />
+					{details.image && <img src={details.image} alt="" />}
+					{!details.image && (
+						<img
+							src={'/assets/logo-v.png'}
+							style={{ width: '100px', height: 'auto', margin: '40px', marginBlock: '70px', cursor:"pointer" }}
+							alt=""
+						/>
+					)}
 				</div>
 				<h3>
 					{details.full_name}

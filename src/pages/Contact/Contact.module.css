@@ -1,0 +1,76 @@
+.hero{
+	@apply relative pt-10 pb-52 lg:py-32 bg-[#F5FBFC] text-center;
+
+	@apply  after:absolute after:top-[35%]  after:h-[65%] after:bg-c-hero-m lg:after:top-0 after:left-0 lg:after:left-1/2 after:w-full lg:after:w-1/2 lg:after:h-full lg:after:bg-c-hero after:bg-cover after:bg-no-repeat after:bg-center
+}
+
+.hero > div {
+	@apply grid grid-cols-1 gap-5 grid-rows-1 justify-items-center items-center max-w-5xl mx-auto;
+
+	/* Destop Styles */
+	@apply lg:grid-cols-2;
+}
+
+.hero > div > div{
+	@apply w-4/5 mx-auto
+}
+
+.hero > div > div > h1{
+	@apply capitalize text-3xl lg:text-4xl font-bold my-5
+}
+
+.hero > div > div > p{
+	@apply text-xl text-center lg:text-left
+}
+
+.contact_form{
+	@apply relative
+}
+
+.contact_form > form{
+	@apply lg:grid  max-w-5xl mx-auto my-20 w-4/5;
+
+	@apply lg:grid-cols-2 lg:grid-rows-3 lg:gap-16;
+}
+
+
+.form_control{
+	@apply flex flex-col w-full mb-10
+}
+
+.form_control label{
+	@apply mb-5
+}
+
+.form_control input, .form_control textarea{
+	@apply bg-[#F6F6F6] p-3 rounded-lg focus-visible:outline-primary focus-visible:outline-none w-full
+}
+
+form > button[type="submit"]{
+	@apply col-span-2 bg-secondary-main text-white p-3 px-5 self-center justify-self-center rounded-lg font-semibold;
+}
+
+form div:nth-of-type(3){
+	@apply lg:self-end
+}
+
+form div:nth-of-type(4){
+	@apply col-start-auto lg:col-start-2 lg:row-start-1
+}
+
+form div:nth-of-type(5){
+	@apply lg:col-start-2 lg:row-start-2 lg:row-span-2
+}
+
+.error{
+	@apply text-red-600 my-2 text-sm
+}
+
+.message{
+	@apply absolute top-0 left-0 w-full h-full z-50 flex justify-center items-center;
+	@apply before:absolute before:-z-10 before:w-1/2 before:h-1/2  before:contents;
+}
+
+.message p{
+	@apply bg-primary text-white p-5 w-1/3 mx-auto text-center py-32 rounded-lg font-medium capitalize shadow-[0px_0px_19px_-8px_rgba(188,15,230,0.75)] shadow-primary
+}

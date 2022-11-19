@@ -17,8 +17,11 @@ const Footer = () => {
 	return (
 		<footer className={styles.footer}>
 			<div>
-				<div className={styles.logo}>
-					<img src="/assets/logo.png" alt="" />
+				<div>
+					<div className={styles.logo}>
+						<img src="/assets/logo.png" alt="" />
+					</div>
+					<p>&#169; TTFWebTeam</p>
 				</div>
 				<div className={styles.address}>
 					<h3>Address</h3>

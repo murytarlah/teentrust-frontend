@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Home.module.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Autoplay, Pagination, Navigation } from 'swiper';
 import StoryCard from '../../components/carousel/StoryCard';
+import { BoardOfTrustees } from '../../_mocks/data';
+import { BoardOfTrustees, pApps } from '../../_mocks/data';
+import Card from '../../components/Card/Card';
+import Page from '../../components/Page';
+import NiceModal from '@ebay/nice-modal-react';
+import Modal from '../../components/modals/pAppModal';
+
 const navigation = {
 	nextEl: '.control-next',
 	prevEl: '.control-prev',
@@ -27,13 +34,33 @@ const storiesData = [
 		name: 'Timileyin',
 	},
 ];
-import { BoardOfTrustees } from '../../_mocks/data';
-import Card from '../../components/Card/Card';
-import Page from '../../components/Page';
 
 const Home = () => {
 	const [email, setEmail] = useState('');
+	const [message, setMessage] = useState('');
 	const [Board,setBoard] = useState(BoardOfTrustees)
+
+
+	const emailSubscribe = (e) => {
+		e.preventDefault()
+		let raw = { email };
+		console.log({ email })
+		console.log(JSON.stringify({ email }));
+		fetch('https://teenstrustfoundation.herokuapp.com/api/subscribe-email', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(raw),
+			redirect: 'follow',
+		}).then((response) => response.json())
+			.then((result) => {
+				setEmail('')
+				setMessage(result.flash_message)
+				console.log(result);
+			})
+			.catch((error) => console.log('error', error));
+	}
 
 	const people = () => {
 		for (let i = 0; i < 4; i++) {
@@ -41,8 +68,23 @@ const Home = () => {
 				
 		}
 	}
+	useEffect(() => {
+		
+	}, [email]);
+	const [windowOffset, setWindowOffset] = useState(0);
+
+	const showAddModal = (id) => {
+		setWindowOffset(window.scrollY);
+		document.querySelector('.App').style = `position: fixed; top: -${windowOffset}px; left: 0; right: 0;`;
+		NiceModal.show(Modal, { id });
+	};
+
+	// useEffect(() => {
+	// 	emailSubscribe()
+	// });
+
 	return (
-		<Page title={"Home | TeenTrust"}>
+		<Page title={'Home | TeenTrust'}>
 			<div className={styles.hero}>
 				<div className={styles.hero_content}>
 					<h3>Get started today!</h3>
@@ -134,21 +176,14 @@ const Home = () => {
 								partners, project partners or administrative partners.
 							</p>
 							<div className={styles.p_apps}>
-								<div>
-									<img src="/assets/google-for-nonprofits-twitter.png" alt="" />
-								</div>
-								<div>
-									<img src="/assets/kobi.png" alt="" />
-								</div>
-								<div>
-									<img src="/assets/slack-for-nonprofits-twitter.png" alt="" />
-								</div>
-								<div>
-									<img src="/assets/techsoup.png" alt="" />
-								</div>
-								<div>
-									<img src="assets/aimoc 1.png" alt="" />
-								</div>
+								{
+									// console.log(pApps);
+									pApps.map((ele) => (
+										<div id={ele.id} key={ele.id} onClick={() => showAddModal(ele.id)}>
+											<img src={ele.image} alt="" />
+										</div>
+									))
+								}
 							</div>
 						</div>
 					</div>
@@ -253,7 +288,7 @@ const Home = () => {
 				</div>
 				<div className={styles.people}>
 					{Board.map((member, index) => {
-						return index < 4 && <Card color={'purple'} details={member} id={member.id} />
+						return index < 4 && <Card color={'purple'} key={member.id} details={member} id={member.id} />;
 					})}
 				</div>
 				<button>See all</button>
@@ -284,8 +319,8 @@ const Home = () => {
 				<h2>
 					<span>Subscribe</span> to our newsletter
 				</h2>
-				<form>
-					<input type="email" placeholder="johndoe@gmail.com" />
+				<form onSubmit={emailSubscribe}>
+					<input type="email" placeholder="johndoe@gmail.com" required  onChange={(e)=>setEmail(e.target.value)}/>
 					<button type="submit">Subscribe</button>
 				</form>
 			</div>
