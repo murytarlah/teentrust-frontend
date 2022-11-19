@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Home.module.css';
 import { BoardOfTrustees, pApps } from '../../_mocks/data';
 import Card from '../../components/Card/Card';
@@ -9,18 +9,40 @@ import Modal from '../../components/modals/pAppModal';
 const Home = () => {
 
 	const [email, setEmail] = useState('');
+	const [message, setMessage] = useState('');
 	const [Board,setBoard] = useState(BoardOfTrustees)
 
 
-	const emailSubscribe = () => {
-		
+	const emailSubscribe = (e) => {
+		e.preventDefault()
+		let raw = { email };
+		console.log({ email })
+		console.log(JSON.stringify({ email }));
+		fetch('https://teenstrustfoundation.herokuapp.com/api/subscribe-email', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(raw),
+			redirect: 'follow',
+		}).then((response) => response.json())
+			.then((result) => {
+				setEmail('')
+				setMessage(result.flash_message)
+				console.log(result);
+			})
+			.catch((error) => console.log('error', error));
 	}
+
 	const people = () => {
 		for (let i = 0; i < 4; i++) {
 			<Card color={"purple"} details={Board[i]} id={Board[i].id} />
 				
 		}
 	}
+	useEffect(() => {
+		
+	}, [email]);
 	const [windowOffset, setWindowOffset] = useState(0);
 
 	const showAddModal = (id) => {
@@ -28,6 +50,10 @@ const Home = () => {
 		document.querySelector('.App').style = `position: fixed; top: -${windowOffset}px; left: 0; right: 0;`;
 		NiceModal.show(Modal, { id });
 	};
+
+	// useEffect(() => {
+	// 	emailSubscribe()
+	// });
 
 	return (
 		<Page title={'Home | TeenTrust'}>
@@ -125,7 +151,7 @@ const Home = () => {
 								{
 									// console.log(pApps);
 									pApps.map((ele) => (
-										<div id={ele.id} ey={ele.id} onClick={() => showAddModal(ele.id)}>
+										<div id={ele.id} key={ele.id} onClick={() => showAddModal(ele.id)}>
 											<img src={ele.image} alt="" />
 										</div>
 									))
@@ -180,7 +206,7 @@ const Home = () => {
 				</div>
 				<div className={styles.people}>
 					{Board.map((member, index) => {
-						return index < 4 && <Card color={'purple'} details={member} id={member.id} />;
+						return index < 4 && <Card color={'purple'} key={member.id} details={member} id={member.id} />;
 					})}
 				</div>
 				<button>See all</button>
@@ -212,7 +238,7 @@ const Home = () => {
 					<span>Subscribe</span> to our newsletter
 				</h2>
 				<form onSubmit={emailSubscribe}>
-					<input type="email" placeholder="johndoe@gmail.com"  onChange={(e)=>setEmail(e.target.value)}/>
+					<input type="email" placeholder="johndoe@gmail.com" required  onChange={(e)=>setEmail(e.target.value)}/>
 					<button type="submit">Subscribe</button>
 				</form>
 			</div>

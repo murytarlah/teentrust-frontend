@@ -11,7 +11,7 @@ const Contact = () => {
 	useEffect(() => {
 		setTimeout(() => {
 			setMessage('')
-		}, 5000)
+		}, 15000)
 	}, [message]);
 
 	return (
