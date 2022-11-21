@@ -9,9 +9,6 @@ const Impacts = () => {
 			<div className={styles.hero}>
 				<div>
 					<h1>Impacts, Reports, Projects & Initiatives</h1>
-					{/* <div>
-						<img src="/assets/impacts.png" alt="" />
-					</div> */}
 				</div>
 			</div>
 			<div className={styles.statis}>

@@ -49,7 +49,7 @@ const Contact = () => {
 					onSubmit={(values, { resetForm }) => {
 						console.log(values);
 						console.log(JSON.stringify(values));
-						fetch('https://teenstrustfoundation.herokuapp.com/api/contact-us', {
+						fetch('https://api.teenstrustfoundation.org/api/contact-us', {
 							method: 'POST',
 							headers: {
 								'Content-Type': 'application/json',

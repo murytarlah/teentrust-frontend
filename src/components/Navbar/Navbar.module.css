@@ -58,7 +58,7 @@ nav ul li {
 
 nav button {
 	/* Mobile Styles */
-	@apply rounded-full border p-2 m-4 px-5 border-secondary-main font-semibold
+	@apply rounded-full border p-2 m-4 px-5 border-secondary-main font-semibold hover:bg-secondary-main hover:text-white transition-all duration-500
 
 	/* Tablet Styles */
 

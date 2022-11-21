@@ -84,7 +84,7 @@ const Navbar = ({ isDesktop, isMobile }) => {
 					);
 				})}
 				<button>
-					<Link>Donate</Link>
+					<Link to={'/donate'}>Donate</Link>
 				</button>
 			</ul>
 		</nav>

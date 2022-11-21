@@ -1,38 +1,21 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './Home.module.css';
 import { BoardOfTrustees, pApps } from '../../_mocks/data';
 import Card from '../../components/Card/Card';
 import Page from '../../components/Page';
 import NiceModal from '@ebay/nice-modal-react';
 import Modal from '../../components/modals/pAppModal';
+import { Link } from 'react-router-dom';
+import { Formik } from 'formik';
+import * as Yup from "yup"
 
 const Home = () => {
 
 	const [email, setEmail] = useState('');
 	const [message, setMessage] = useState('');
 	const [Board,setBoard] = useState(BoardOfTrustees)
-
-
-	const emailSubscribe = (e) => {
-		e.preventDefault()
-		let raw = { email };
-		console.log({ email })
-		console.log(JSON.stringify({ email }));
-		fetch('https://teenstrustfoundation.herokuapp.com/api/subscribe-email', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(raw),
-			redirect: 'follow',
-		}).then((response) => response.json())
-			.then((result) => {
-				setEmail('')
-				setMessage(result.flash_message)
-				console.log(result);
-			})
-			.catch((error) => console.log('error', error));
-	}
+	const navigate = useNavigate()
 
 	const people = () => {
 		for (let i = 0; i < 4; i++) {
@@ -40,20 +23,14 @@ const Home = () => {
 				
 		}
 	}
-	useEffect(() => {
-		
-	}, [email]);
 	const [windowOffset, setWindowOffset] = useState(0);
 
+	const handleEmailChange = (e) => setEmail(e.target.value);
 	const showAddModal = (id) => {
 		setWindowOffset(window.scrollY);
 		document.querySelector('.App').style = `position: fixed; top: -${windowOffset}px; left: 0; right: 0;`;
 		NiceModal.show(Modal, { id });
 	};
-
-	// useEffect(() => {
-	// 	emailSubscribe()
-	// });
 
 	return (
 		<Page title={'Home | TeenTrust'}>
@@ -69,7 +46,18 @@ const Home = () => {
 				<div className={styles.hero_image}>
 					<img src="/assets/hero-image1.png" alt="" />
 				</div>
-				<button>Get Started</button>
+				<button
+					onClick={() => {
+						window.scrollTo({
+							top: 0,
+							left: 0,
+							behavior: 'smooth',
+						});
+						navigate('/donate');
+					}}
+				>
+					<Link>Get Started</Link>
+				</button>
 			</div>
 			<div className={styles.who_we_are}>
 				<div>
@@ -83,7 +71,18 @@ const Home = () => {
 							enhancing access to education and health for the less privileged African children and teenagers with an
 							initial focus on Nigeria.
 						</p>
-						<button>Learn more</button>
+						<button
+							onClick={() => {
+								window.scrollTo({
+									top: 0,
+									left: 0,
+									behavior: 'smooth',
+								});
+								navigate('/about');
+							}}
+						>
+							<Link>Learn more</Link>
+						</button>
 					</div>
 				</div>
 			</div>
@@ -160,7 +159,18 @@ const Home = () => {
 						</div>
 					</div>
 					<div>
-						<button>Learn More</button>
+						<button
+							onClick={() => {
+								window.scrollTo({
+									top: 0,
+									left: 0,
+									behavior: 'smooth',
+								});
+								navigate('/culture');
+							}}
+						>
+							<Link to={'/culture'}>Learn More</Link>
+						</button>
 					</div>
 				</div>
 			</div>
@@ -209,7 +219,18 @@ const Home = () => {
 						return index < 4 && <Card color={'purple'} key={member.id} details={member} id={member.id} />;
 					})}
 				</div>
-				<button>See all</button>
+				<button
+					onClick={() => {
+						window.scrollTo({
+							top: 0,
+							left: 0,
+							behavior: 'smooth',
+						});
+						navigate('/people');
+					}}
+				>
+					<Link>See all</Link>
+				</button>
 			</div>
 			<div className={styles.donations}>
 				<div>
@@ -220,15 +241,40 @@ const Home = () => {
 					<div>
 						<div>
 							<h3>Become a Regular Donor</h3>
-							<button>Donate now</button>
+							<button
+							>
+								<a href={'https://paystack.com/pay/ttf_donations'} target={'_blank'}>Donate now</a>
+							</button>
 						</div>
 						<div>
 							<h3>Become a One Time Donor</h3>
-							<button>Donate now</button>
+							<button
+								onClick={() => {
+									window.scrollTo({
+										top: 0,
+										left: 0,
+										behavior: 'smooth',
+									});
+									navigate('/donate');
+								}}
+							>
+								<Link>Donate now</Link>
+							</button>
 						</div>
 						<div>
 							<h3>Donate to a Specific Project</h3>
-							<button>Donate now</button>
+							<button
+								onClick={() => {
+									window.scrollTo({
+										top: 0,
+										left: 0,
+										behavior: 'smooth',
+									});
+									navigate('/donate');
+								}}
+							>
+								<Link>Donate now</Link>
+							</button>
 						</div>
 					</div>
 				</div>
@@ -237,10 +283,45 @@ const Home = () => {
 				<h2>
 					<span>Subscribe</span> to our newsletter
 				</h2>
-				<form onSubmit={emailSubscribe}>
-					<input type="email" placeholder="johndoe@gmail.com" required  onChange={(e)=>setEmail(e.target.value)}/>
-					<button type="submit">Subscribe</button>
-				</form>
+				<Formik
+					initialValues={{
+						email: '',
+					}}
+					validationSchema={Yup.object({
+						email: Yup.string().email('Invalid email address').required('Required'),
+					})}
+					onSubmit={(values, { resetForm }) => {
+						fetch('https://api.teenstrustfoundation.org/api/subscribe-email', {
+							method: 'POST',
+							headers: {
+								'Content-Type': 'application/json',
+							},
+							body: JSON.stringify(values),
+							redirect: 'follow',
+						})
+							.then((response) => response.json())
+							.then((result) => {
+								console.log(result);
+								setMessage(result.flash_message);
+								resetForm();
+							})
+							.catch((error) => console.log('error', error));
+					}}
+				>
+					{({ values, errors, touched, handleChange, handleSubmit, getFieldProps, resetForm }) => (
+						<form onSubmit={handleSubmit}>
+							<input
+								type="email"
+								placeholder="johndoe@gmail.com"
+								{...getFieldProps('email')}
+								value={values.email}
+								onChange={handleChange}
+							/>
+							<p>{errors.email}</p>
+							<button type="submit">Subscribe</button>
+						</form>
+					)}
+				</Formik>
 			</div>
 		</Page>
 	);

@@ -11,11 +11,6 @@ const Modal = NiceModal.create(({id}) => {
 
 	const [currentMember, setCurrentMember] = useState(boardTrust.filter((member) => member.id == id)[0]);
 
-// useEffect(() => {
-// 		console.log(currentMember)
-
-// 		console.log(member)
-// 	}, [currentMember]);
 	const modal = useModal();
 	return (
 		<div className={styles.background}>
@@ -28,12 +23,6 @@ const Modal = NiceModal.create(({id}) => {
 						modal.remove();
 					}}
 				/>
-				{/* <div className={styles.modal_content}>
-					{currentMember && <Card color={'purple'} details={currentMember} />}
-					<div>
-						<p>{currentMember.about}</p>
-					</div>
-				</div> */}
 				{currentMember && console.log(currentMember)}
 				{currentMember && (
 					<div className={styles.modal_content}>
