@@ -13,7 +13,7 @@ import Contact from './pages/Contact/Contact';
 import About from './pages/About/About';
 import Home from './pages/Home/Home';
 import Peoples from './pages/People/People';
-
+import Donate from './pages/Donate/Donate';
 //--------------------------------------------------------------
 
 /**
@@ -37,6 +37,7 @@ function App() {
 					<Route exact path={'/impacts'} element={<Impacts />}></Route>
 					<Route exact path={'/about'} element={<About />}></Route>
 					<Route exact path={'/people'} element={<Peoples />}></Route>
+					<Route exact path={'/donate'} element={<Donate />}></Route>
 				</Routes>
 				<Footer></Footer>
 			</div>

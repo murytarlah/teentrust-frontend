@@ -10,7 +10,9 @@ module.exports = {
 				"p-hero": "linear-gradient(90deg, #F5FBFC 3.06%, rgba(237, 237, 237, 0) 30.87%),url(/assets/people.png)",
 				"p-hero-m": "linear-gradient(180deg, #F5FBFC 3.06%, rgba(237, 237, 237, 0) 30.87%),url(/assets/people.png)",
 				"c-hero": "linear-gradient(90deg, #F5FBFC 3.06%, rgba(237, 237, 237, 0) 30.87%),url(/assets/contact.png)",
-				"c-hero-m": "linear-gradient(180deg, #F5FBFC 3.06%, rgba(237, 237, 237, 0) 30.87%),url(/assets/contact.png)"
+				"c-hero-m": "linear-gradient(180deg, #F5FBFC 3.06%, rgba(237, 237, 237, 0) 30.87%),url(/assets/contact.png)",
+				"d-hero": "linear-gradient(90deg, #F5FBFC 3.06%, rgba(237, 237, 237, 0) 30.87%),url(/assets/donate.png)",
+				"d-hero-m": "linear-gradient(180deg, #F5FBFC 3.06%, rgba(237, 237, 237, 0) 30.87%),url(/assets/donate.png)"
 
 			},
 			colors: {
