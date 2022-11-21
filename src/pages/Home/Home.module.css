@@ -266,7 +266,15 @@
 .newsletter form button{
 	@apply bg-secondary-main text-white p-2 px-5 font-semibold rounded-lg my-3
 }
+/* Stories Section Styles */
+.stories{
+	/* @apply p-4  mx-auto  my-20 */
+	@apply w-11/12 mx-auto
+}
 
+.stories h2{
+	@apply text-2xl font-semibold my-5
+}
 .donations > div{
 	@apply max-w-6xl w-11/12 mx-auto
 }
