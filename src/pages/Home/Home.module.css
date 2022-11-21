@@ -269,7 +269,7 @@
 /* Stories Section Styles */
 .stories{
 	/* @apply p-4  mx-auto  my-20 */
-	@apply w-11/12 mx-auto
+	@apply w-11/12 mx-auto my-16 max-w-6xl
 }
 
 .stories h2{

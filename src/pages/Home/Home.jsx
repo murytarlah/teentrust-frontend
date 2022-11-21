@@ -6,7 +6,6 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Autoplay, Pagination, Navigation } from 'swiper';
 import StoryCard from '../../components/carousel/StoryCard';
-import { BoardOfTrustees } from '../../_mocks/data';
 import { BoardOfTrustees, pApps } from '../../_mocks/data';
 import Card from '../../components/Card/Card';
 import Page from '../../components/Page';
@@ -15,6 +14,7 @@ import Modal from '../../components/modals/pAppModal';
 import { Link } from 'react-router-dom';
 import { Formik } from 'formik';
 import * as Yup from "yup"
+import { Icon } from '@iconify/react';
 
 const navigation = {
 	nextEl: '.control-next',
@@ -202,60 +202,6 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
-			<section>
-				<div className={styles.stories}>
-					<div className="flex items-center justify-between relative">
-						<h2>
-							Their <span>Stories</span>
-						</h2>
-						<div className="control-btn-con flex gap-4">
-							<div className="control-prev w-10 h-10 rounded-full bg-secondary-main flex justify-center items-center">
-								p
-							</div>
-							<div className="control-next w-10 h-10 rounded-full bg-secondary-main flex justify-center items-center">
-								n
-							</div>
-						</div>
-					</div>
-				</div>
-				<div className="carousel">
-					<Swiper
-						// slidesPerView={3}
-						loop={true}
-						loopFillGroupWithBlank={true}
-						spaceBetween={30}
-						centeredSlides={true}
-						autoplay={{
-							delay: 2500,
-							disableOnInteraction: false,
-						}}
-						breakpoints={{
-							// when window width is >= 640px
-							640: {
-							  width: 640,
-							  slidesPerView: 1,
-							},
-							// when window width is >= 768px
-							768: {
-							  width: 768,
-							  slidesPerView: 2,
-							},
-						  }}
-						navigation={navigation}
-						modules={[Autoplay, Navigation]}
-						className="mySwiper"
-					>
-						{storiesData.map((storyDet, idx) => (
-							<SwiperSlide key={idx}>
-								<StoryCard
-									story={storyDet.story}
-									name={storyDet.name}
-								/>
-							</SwiperSlide>
-						))}
-					</Swiper>
-				</div>
-			</section>
 			<div className={styles.stats}>
 				<div>
 					<div className={styles.beneficiaries}>
@@ -314,6 +260,57 @@ const Home = () => {
 					<Link>See all</Link>
 				</button>
 			</div>
+			<section>
+				<div className={styles.stories}>
+					<div className="flex items-center justify-between relative">
+						<h2>
+							Their <span>Stories</span>
+						</h2>
+						<div className="control-btn-con flex gap-4">
+							<div className="control-prev w-10 h-10 rounded-full bg-secondary-main flex justify-center items-center">
+								<Icon icon="material-symbols:arrow-right-alt-rounded" color="white" rotate={2} />
+							</div>
+							<div className="control-next w-10 h-10 rounded-full bg-secondary-main flex justify-center items-center text-white">
+								<Icon icon={'material-symbols:arrow-right-alt-rounded'} />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div className="carousel max-w-7xl mx-auto mb-16">
+					<Swiper
+						// slidesPerView={3}
+						loop={true}
+						loopFillGroupWithBlank={true}
+						spaceBetween={30}
+						centeredSlides={true}
+						autoplay={{
+							delay: 2500,
+							disableOnInteraction: false,
+						}}
+						breakpoints={{
+							// when window width is >= 640px
+							640: {
+								width: 640,
+								slidesPerView: 1,
+							},
+							// when window width is >= 768px
+							768: {
+								width: 768,
+								slidesPerView: 2,
+							},
+						}}
+						navigation={navigation}
+						modules={[Autoplay, Navigation]}
+						className="mySwiper"
+					>
+						{storiesData.map((storyDet, idx) => (
+							<SwiperSlide key={idx}>
+								<StoryCard story={storyDet.story} name={storyDet.name} />
+							</SwiperSlide>
+						))}
+					</Swiper>
+				</div>
+			</section>
 			<div className={styles.donations}>
 				<div>
 					<h2>
@@ -323,9 +320,10 @@ const Home = () => {
 					<div>
 						<div>
 							<h3>Become a Regular Donor</h3>
-							<button
-							>
-								<a href={'https://paystack.com/pay/ttf_donations'} target={'_blank'}>Donate now</a>
+							<button>
+								<a href={'https://paystack.com/pay/ttf_donations'} target={'_blank'}>
+									Donate now
+								</a>
 							</button>
 						</div>
 						<div>

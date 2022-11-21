@@ -84,7 +84,9 @@ const Navbar = ({ isDesktop, isMobile }) => {
 					);
 				})}
 				<button>
-					<Link to={'/donate'}>Donate</Link>
+					<NavLink className={({ isActive }) => (isActive ? styles.active : '')} to={'/donate'}>
+						Donate
+					</NavLink>
 				</button>
 			</ul>
 		</nav>
