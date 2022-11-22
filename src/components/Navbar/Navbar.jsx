@@ -94,18 +94,32 @@ const Navbar = ({ isDesktop, isMobile }) => {
 	console.log(isDesktop,showMenu)
 	
 	return (
-		<header>
-			<div className={styles.logo}>
-				<img src="/assets/logo.png" alt="" />
+		<>
+			<div className={'flex flex-col md:flex-row justify-between max-w-6xl mx-auto w-11/12 p-2 items-center h-max'}>
+				<p className='text-xl font-semibold'>Ongoing School-Kits-Programme</p>
+				<button className="my-4">
+					<a
+						href="https://zfrmz.com/1ipJXQH8a1rN7L050eZY"
+						target={'_blank'}
+						className={'bg-secondary-main p-3 px-5 text-white rounded-md font-semibold'}
+					>
+						Open
+					</a>
+				</button>
 			</div>
-			{!isDesktop && showMenu && navElement}
-			{isDesktop && showMenu && navElement}
-			{!isDesktop && (
-				<div className={styles.hamburger} onClick={() => setShowMenu(!showMenu)}>
-					<Icon icon={showMenu ? 'ep:close' : 'quill:hamburger'} />
+			<header>
+				<div className={styles.logo}>
+					<img src="/assets/logo.png" alt="" />
 				</div>
-			)}
-		</header>
+				{!isDesktop && showMenu && navElement}
+				{isDesktop && showMenu && navElement}
+				{!isDesktop && (
+					<div className={styles.hamburger} onClick={() => setShowMenu(!showMenu)}>
+						<Icon icon={showMenu ? 'ep:close' : 'quill:hamburger'} />
+					</div>
+				)}
+			</header>
+		</>
 	);
 };
 
