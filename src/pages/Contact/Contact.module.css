@@ -1,3 +1,5 @@
+@tailwind utilities;
+
 .hero{
 	@apply relative pt-10 pb-52 lg:py-32 bg-[#F5FBFC] text-center;
 
@@ -16,11 +18,19 @@
 }
 
 .hero > div > div > h1{
-	@apply capitalize text-3xl lg:text-4xl font-bold my-5
+	@apply capitalize text-3xl lg:text-4xl font-bold my-3
 }
 
 .hero > div > div > p{
 	@apply text-xl text-center lg:text-left
+}
+
+@layer utilities{
+	.hero > div > div >h1 > span {
+		@apply mb-1 block text-center relative after:bg-vector after:absolute lg:after:w-[250%] after:w-[250%] after:h-[180%] lg:after:h-[180%] after:-top-[55%] after:left-[23%] md:after:left-[37%] lg:after:-top-[46%] lg:after:-left-[20%] after:bg-contain after:bg-no-repeat;
+	
+		@apply lg:inline
+	}
 }
 
 .contact_form{

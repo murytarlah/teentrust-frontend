@@ -1,3 +1,5 @@
+@tailwind utilities;
+
 .hero {
 	/* Mobile Styles */
 	@apply grid grid-rows-[minmax(100px,auto)] w-11/12 mx-auto my-10 justify-items-center gap-4 max-w-6xl;
@@ -130,6 +132,14 @@
 	@apply lg:text-3xl lg:my-8 lg:w-4/5 lg:text-left;
 }
 
+@layer utilities{
+	.og_content h2 > span {
+		@apply mb-1 my-4 block text-center relative after:bg-vector after:absolute lg:after:w-[220%] after:w-[250%] after:h-[180%] lg:after:h-[160%] after:-top-[55%] after:left-[30%] md:after:left-[37%] lg:after:-top-[46%] lg:after:-left-[20%] after:bg-contain after:bg-no-repeat;
+	
+		@apply lg:inline
+	}
+}
+
 .og_content ul li {
 	/* Mobile Styles */
 	@apply text-base my-4 border-b-2 py-5 last:border-b-0 list-disc marker:text-xs marker:text-gray-400;
@@ -162,6 +172,14 @@
 	@apply text-center font-semibold my-4 text-2xl p-3 px-14;
 
 	@apply 2xl:min-w-[40rem] 2xl:justify-self-end 2xl:text-left;
+}
+
+@layer utilities{
+	.how_we_work > div > h2 > span {
+		@apply mb-1 mx-4 my-4 block text-center relative after:bg-vector after:absolute lg:after:w-[220%] after:w-[250%] after:h-[180%] lg:after:h-[160%] after:-top-[55%] after:-left-[20%] md:after:left-[37%] lg:after:-top-[46%] lg:after:-left-[20%] after:bg-contain after:bg-no-repeat;
+	
+		@apply lg:inline
+	}
 }
 
 .eh_projects {
@@ -257,6 +275,14 @@
 	@apply text-2xl font-semibold my-5
 }
 
+@layer utilities{
+	.newsletter h2 > span {
+		@apply mb-1 mx-4 my-4 block text-center relative after:bg-vector after:absolute lg:after:w-[310%] after:w-[270%] after:h-[200%] lg:after:h-[220%] after:-top-[57%] after:left-[30%] md:after:left-[37%] lg:after:-top-[66%] lg:after:-left-[20%] after:bg-contain after:bg-no-repeat;
+	
+		@apply lg:inline
+	}
+}
+
 .newsletter form input{
 	@apply p-3 bg-[#f6f6f6] m-3 placeholder:text-center w-[calc(100%-1rem)] text-center block;
 
@@ -302,7 +328,15 @@
 }
 
 .donations > div > div > div > h3{
-	@apply text-xl font-semibold my-5 w-2/3
+	@apply text-xl font-semibold my-5 w-2/3 text-center
+}
+
+@layer utilities{
+	.donations > div > h2 > span {
+		@apply mb-1 mx-4 my-4 block text-center relative after:bg-vector after:absolute lg:after:w-[220%] after:w-[250%] after:h-[180%] lg:after:h-[160%] after:-top-[55%] after:left-[30%] md:after:left-[37%] lg:after:-top-[46%] lg:after:-left-[20%] after:bg-contain after:bg-no-repeat;
+	
+		@apply lg:inline
+	}
 }
 
 .donations > div > div  div > button{
@@ -348,7 +382,6 @@
 
 .beneficiaries p:nth-of-type(1){
 	@apply col-span-2 text-sm;
-
 	@apply lg:text-base
 }
 
@@ -425,7 +458,15 @@
 }
 
 .people_section h2{
-	 @apply text-2xl font-bold my-5 col-span-2 lg:justify-self-start p-3
+	 @apply text-2xl font-bold my-5 col-span-2 lg:justify-self-start p-3 text-center
+}
+
+@layer utilities{
+	.people_section h2 > span {
+		@apply mb-1 mx-4 my-4 block text-center relative after:bg-vector after:absolute lg:after:w-[220%] after:w-[250%] after:h-[180%] lg:after:h-[160%] after:-top-[55%] after:-left-[20%] md:after:left-[37%] lg:after:-top-[46%] lg:after:-left-[20%] after:bg-contain after:bg-no-repeat;
+	
+		@apply lg:inline
+	}
 }
 
 .ps_content{

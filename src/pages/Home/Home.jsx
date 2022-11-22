@@ -13,7 +13,7 @@ import NiceModal from '@ebay/nice-modal-react';
 import Modal from '../../components/modals/pAppModal';
 import { Link } from 'react-router-dom';
 import { Formik } from 'formik';
-import * as Yup from "yup"
+import * as Yup from 'yup';
 import { Icon } from '@iconify/react';
 
 const navigation = {
@@ -26,7 +26,8 @@ const storiesData = [
 		name: 'Timilehin',
 	},
 	{
-		story: ' Our mother was the sole sponsor of our education. I was embittered and shocked when we lost her in the ghastly accident',
+		story:
+			' Our mother was the sole sponsor of our education. I was embittered and shocked when we lost her in the ghastly accident',
 		name: 'Taiwo',
 	},
 	{
@@ -34,7 +35,8 @@ const storiesData = [
 		name: 'Taiwo',
 	},
 	{
-		story: ' Our mother was the sole sponsor of our education. I was embittered and shocked when we lost her in the ghastly accident',
+		story:
+			' Our mother was the sole sponsor of our education. I was embittered and shocked when we lost her in the ghastly accident',
 		name: 'Timileyin',
 	},
 ];
@@ -42,15 +44,14 @@ const storiesData = [
 const Home = () => {
 	const [email, setEmail] = useState('');
 	const [message, setMessage] = useState('');
-	const [Board,setBoard] = useState(BoardOfTrustees)
-	const navigate = useNavigate()
+	const [Board, setBoard] = useState(BoardOfTrustees);
+	const navigate = useNavigate();
 
 	const people = () => {
 		for (let i = 0; i < 4; i++) {
-			<Card color={"purple"} details={Board[i]} id={Board[i].id} />
-				
+			<Card color={'purple'} details={Board[i]} id={Board[i].id} />;
 		}
-	}
+	};
 	const [windowOffset, setWindowOffset] = useState(0);
 
 	const handleEmailChange = (e) => setEmail(e.target.value);
@@ -119,7 +120,9 @@ const Home = () => {
 					<img src="/assets/target 1.png" alt="" />
 				</div>
 				<div className={styles.og_content}>
-					<h2>We Aim....</h2>
+					<h2>
+						We <span>Aim....</span>
+					</h2>
 					<ul>
 						<li>To enhance the achievement of the world’s target of better health among less privileged teenagers.</li>
 						<li>
@@ -238,7 +241,9 @@ const Home = () => {
 				</div>
 			</div>
 			<div className={styles.people_section}>
-				<h2>Our People</h2>
+				<h2>
+					Our <span>People</span>
+				</h2>
 				<div className={styles.ps_content}>
 					<p>We have a network of professionals working to ensure we deliver on our vision and mission.</p>
 				</div>
@@ -264,7 +269,14 @@ const Home = () => {
 				<div className={styles.stories}>
 					<div className="flex items-center justify-between relative">
 						<h2>
-							Their <span>Stories</span>
+							Their{' '}
+							<span
+								className={
+									'mb-1 mx-4 my-4 block text-center relative after:bg-vector after:absolute lg:after:w-[220%] after:w-[250%] after:h-[180%] lg:after:h-[160%] after:-top-[55%] after:-left-[20%] md:after:-left-[23%] lg:after:-top-[46%] lg:after:-left-[20%] after:bg-contain after:bg-no-repeat md:inline'
+								}
+							>
+								Stories
+							</span>
 						</h2>
 						<div className="control-btn-con flex gap-4">
 							<div className="control-prev w-10 h-10 rounded-full bg-secondary-main flex justify-center items-center">

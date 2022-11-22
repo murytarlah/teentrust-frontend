@@ -1,3 +1,5 @@
+@tailwind utilities;	
+
 .hero{
 	@apply relative py-28 pb-52 lg:py-32 bg-[#F5FBFC] text-center;
 
@@ -16,7 +18,15 @@
 }
 
 .hero > div > div > h1{
-	@apply capitalize text-3xl lg:text-4xl font-bold my-5
+	@apply capitalize text-3xl lg:text-4xl font-bold my-3
+}
+
+@layer utilities{
+	.hero > div > div >h1 > span {
+		@apply mt-3 block text-center relative after:bg-vector after:absolute lg:after:w-[250%] after:w-[220%] after:h-[170%] lg:after:h-[180%] after:-top-[55%] after:left-[25%] md:after:left-[37%] lg:after:-top-[46%] lg:after:-left-[20%] after:bg-contain after:bg-no-repeat;
+	
+		@apply lg:inline
+	}
 }
 
 .hero > div > div > p{

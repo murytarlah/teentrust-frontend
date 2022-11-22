@@ -1,3 +1,5 @@
+@tailwind utilities;
+
 .main{
 	@apply w-4/5 mx-auto my-10 max-w-6xl grid grid-cols-1 gap-5 p-3 justify-between text-[#4A4A4A];
 
@@ -28,12 +30,16 @@
 }
 
 .main h1{
-	@apply text-4xl font-bold mt-7 lg:col-start-1
+	@apply text-4xl font-bold mt-7 lg:col-start-1 text-center
 }
 
 
-.main > h1 > span{
-	@apply text-secondary-main
+@layer utilities{
+	.main h1 > span {
+		@apply mb-1 block text-center relative after:bg-vector after:absolute lg:after:w-[135%] after:w-[180%] after:h-[160%] lg:after:h-[220%] after:-top-[55%] after:left-[18%] md:after:left-[37%] lg:after:-top-[16%] lg:after:-left-[20%] after:bg-contain after:bg-no-repeat;
+	
+		@apply lg:inline
+	}
 }
 
 

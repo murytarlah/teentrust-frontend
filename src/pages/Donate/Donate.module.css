@@ -81,3 +81,18 @@
 .specific > div:nth-child(2), .specific > div:nth-child(3){
 	@apply mb-10
 }
+
+.form_control{
+	@apply flex flex-col w-full mb-5
+}
+
+.form_control label{
+	@apply mb-5
+}
+
+.form_control input, .form_control textarea{
+	@apply bg-[#F6F6F6] p-3 rounded-lg focus-visible:outline-primary focus-visible:outline-none w-full
+}
+.error{
+	@apply text-red-600 my-2 text-sm
+}
