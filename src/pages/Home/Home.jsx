@@ -4,6 +4,8 @@ import styles from './Home.module.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Autoplay, Pagination, Navigation } from 'swiper';
 import StoryCard from '../../components/carousel/StoryCard';
 import { BoardOfTrustees, pApps } from '../../_mocks/data';
@@ -61,33 +63,110 @@ const Home = () => {
 		NiceModal.show(Modal, { id });
 	};
 
+	// const Thumbs = () => {
+		// return Array.from({ length: 5 }).map((item, index) => <div className={"opacity-10"} key={index}></div>);
+	// };
+
 	return (
 		<Page title={'Home | TeenTrust'}>
-			<div className={styles.hero}>
-				<div className={styles.hero_content}>
-					<h3>Get started today!</h3>
-					<h1>Enhancing access to education and health</h1>
-					<p>
-						Join us to enhance pre-primary, primary and secondary education as well as prompt access to health services
-						for the less privileged Nigerian children and teen population.
-					</p>
+			<Carousel
+				renderIndicator={(onClickHandler, isSelected, index, label) => {
+					const className = isSelected
+						? 'bg-secondary-main inline-block h-3 mr-4 w-3 rounded-full opacity-100 pointer'
+						: 'bg-secondary-main h-3 w-3 mr-4 inline-block rounded-full opacity-50 pointer hover:opacity-100 relative after:absolute after:content after:w-5 after:h-5 after:bg-seondary-main';
+					return (
+						<span
+							className={className}
+							onClick={onClickHandler}
+							onKeyDown={onClickHandler}
+							key={index}
+							value={index}
+							role={'button'}
+							tabIndex={0}
+							aria-label={`${label} ${index + 1}`}
+						></span>
+					);
+				}}
+				showThumbs={false}
+				showArrows={false}
+				showIndicators={true}
+				showStatus={false}
+				// interval={5000}
+				autoPlay
+				infiniteLoop
+			>
+				<div className={styles.hero}>
+					<div className={styles.hero_content_1}>
+						<h3>Get started today!</h3>
+						<h1>Enhancing access to education and health</h1>
+						<p>
+							Join us to enhance pre-primary, primary and secondary education as well as prompt access to health
+							services for the less privileged Nigerian children and teen population.
+						</p>
+					</div>
+					<div className={styles.hero_image}>
+						<img src="/assets/hero-image1.png" alt="" />
+					</div>
+					<button
+						onClick={() => {
+							window.scrollTo({
+								top: 0,
+								left: 0,
+								behavior: 'smooth',
+							});
+							navigate('/donate');
+						}}
+					>
+						<Link>Get Started</Link>
+					</button>
 				</div>
-				<div className={styles.hero_image}>
-					<img src="/assets/hero-image1.png" alt="" />
+				<div className={styles.hero}>
+					<div className={styles.hero_content_2}>
+						<h3>Street-To-School <br /> Project 2022</h3>
+						<h1>Do you know an out-of-school child in your street? Or a child about to drop out of school?</h1>
+						<p>Then, Nominate a street child for #STREET-TO-SCHOOL. Help that child today!</p>
+					</div>
+					<div className={styles.hero_image}>
+						<img src="/assets/hero-image1.png" alt="" />
+					</div>
+					<button
+						onClick={() => {
+							window.scrollTo({
+								top: 0,
+								left: 0,
+								behavior: 'smooth',
+							});
+							navigate('/donate');
+						}}
+					>
+						<Link>Nominate now</Link>
+					</button>
 				</div>
-				<button
-					onClick={() => {
-						window.scrollTo({
-							top: 0,
-							left: 0,
-							behavior: 'smooth',
-						});
-						navigate('/donate');
-					}}
-				>
-					<Link>Get Started</Link>
-				</button>
-			</div>
+				<div className={styles.hero}>
+					<div className={styles.hero_content_3}>
+						<h3>Street-To-School <br /> Project 2022</h3>
+						<h1>
+							Donate cheerfully to <span>#enroll-a-street-child in school.</span>
+						</h1>
+						<p>Let’s take them from #STREET-TO-SCHOOL together.</p>
+					</div>
+					<div className={styles.hero_image}>
+						<img src="/assets/hero-image3.png" alt="" />
+					</div>
+					<button
+						onClick={() => {
+							window.scrollTo({
+								top: 0,
+								left: 0,
+								behavior: 'smooth',
+							});
+							navigate('/donate');
+						}}
+					>
+						<Link>Donate Now</Link>
+					</button>
+				</div>
+			</Carousel>
 			<div className={styles.who_we_are}>
 				<div>
 					<div className={styles.wwa_image}>
@@ -272,7 +351,7 @@ const Home = () => {
 							Their{' '}
 							<span
 								className={
-									'mb-1 mx-4 my-4 block text-center relative after:bg-vector after:absolute lg:after:w-[220%] after:w-[250%] after:h-[180%] lg:after:h-[160%] after:-top-[55%] after:-left-[20%] md:after:-left-[23%] lg:after:-top-[46%] lg:after:-left-[20%] after:bg-contain after:bg-no-repeat md:inline'
+									'mb-1 mx-0 md:mx-4 my-4 block text-center relative after:bg-vector after:absolute lg:after:w-[220%] after:w-[250%] after:h-[180%] lg:after:h-[160%] after:-top-[55%] after:-left-[20%] md:after:-left-[23%] lg:after:-top-[46%] lg:after:-left-[20%] after:bg-contain after:bg-no-repeat md:inline'
 								}
 							>
 								Stories

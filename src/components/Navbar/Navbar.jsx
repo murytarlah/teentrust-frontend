@@ -96,7 +96,7 @@ const Navbar = ({ isDesktop, isMobile }) => {
 	return (
 		<>
 			<div className={'flex flex-col md:flex-row justify-between max-w-6xl mx-auto w-11/12 p-2 items-center h-max'}>
-				<p className='text-xl font-semibold'>Ongoing School-Kits-Programme</p>
+				<p className='text-sm md:text-xl font-semibold'>Ongoing School-Kits-Programme</p>
 				<button className="my-4">
 					<a
 						href="https://zfrmz.com/1ipJXQH8a1rN7L050eZY"
