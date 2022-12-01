@@ -122,29 +122,30 @@ const Home = () => {
 				</div>
 				<div className={styles.hero}>
 					<div className={styles.hero_content_2}>
-						<h3>Street-To-School <br /> Project 2022</h3>
+						<h3>
+							Street-To-School <br /> Project 2022
+						</h3>
 						<h1>Do you know an out-of-school child in your street? Or a child about to drop out of school?</h1>
 						<p>Then, Nominate a street child for #STREET-TO-SCHOOL. Help that child today!</p>
 					</div>
 					<div className={styles.hero_image}>
-						<img src="/assets/hero-image1.png" alt="" />
+						<img src="/assets/hero-image2.png" alt="" />
 					</div>
-					<button
-						onClick={() => {
-							window.scrollTo({
-								top: 0,
-								left: 0,
-								behavior: 'smooth',
-							});
-							navigate('/donate');
-						}}
-					>
-						<Link>Nominate now</Link>
+					<button>
+						<a
+							href="https://zfrmz.com/BGkkjNK7cPhcUJvIMVRE"
+							target={'_blank'}
+							// className={'bg-secondary-main p-3 px-5 text-white rounded-md font-semibold'}
+						>
+							Nominate Now
+						</a>
 					</button>
 				</div>
 				<div className={styles.hero}>
 					<div className={styles.hero_content_3}>
-						<h3>Street-To-School <br /> Project 2022</h3>
+						<h3>
+							Street-To-School <br /> Project 2022
+						</h3>
 						<h1>
 							Donate cheerfully to <span>#enroll-a-street-child in school.</span>
 						</h1>

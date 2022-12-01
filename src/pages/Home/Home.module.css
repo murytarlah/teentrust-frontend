@@ -7,7 +7,7 @@
 	/* Tablet Styles */
 
 	/* Desktop Styles */
-	@apply lg:grid-cols-2 lg:grid-rows-[repeat(6,minmax(0px,auto))] lg:justify-items-start lg:items-center lg:gap-y-0 lg:gap-x-5;
+	@apply lg:grid-cols-2 lg:grid-rows-[repeat(6,minmax(85px,auto))] lg:justify-items-start lg:items-center lg:gap-y-0 lg:gap-x-5;
 }
 
 .dot{
@@ -31,15 +31,15 @@
 }
 
 .hero_content_2 h3, .hero_content_3 h3{
-	@apply bg-primary bg-opacity-50 md:w-1/2 p-2 rounded-lg text-xl font-semibold
+	@apply bg-primary bg-opacity-50 md:w-1/2 p-2 rounded-lg text-xl font-semibold animate-slide-right
 }
 
 .hero_content_1 h1, .hero_content_2 h1, .hero_content_3 h1 {
 	/* Mobile Styles */
-	@apply text-3xl font-bold my-4 animate-slide-left;
+	@apply text-2xl font-bold my-4 animate-slide-left;
 
 	/* Desktop Styles */
-	@apply lg:text-5xl lg:my-8 lg:w-4/5;
+	@apply lg:text-4xl lg:my-8 lg:w-4/5;
 }
 
 .hero_content_1 h1 > span, .hero_content_2 h1 > span, .hero_content_3 h1 > span {
