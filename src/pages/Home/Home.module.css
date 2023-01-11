@@ -146,7 +146,7 @@
 
 @layer utilities{
 	.og_content h2 > span {
-		@apply mb-1 my-4 block text-center relative after:bg-vector after:absolute lg:after:w-[220%] after:w-[250%] after:h-[180%] lg:after:h-[160%] after:-top-[55%] after:left-[30%] md:after:left-[37%] lg:after:-top-[46%] lg:after:-left-[20%] after:bg-contain after:bg-no-repeat;
+		@apply mb-1 my-4 block text-center relative after:bg-vector after:absolute lg:after:w-[220%] after:w-[50%] after:h-[180%] lg:after:h-[160%] after:-top-[55%] after:left-[30%] md:after:left-[37%] lg:after:-top-[46%] lg:after:-left-[20%] after:bg-contain after:bg-no-repeat;
 	
 		@apply lg:inline
 	}
@@ -188,7 +188,7 @@
 
 @layer utilities{
 	.how_we_work > div > h2 > span {
-		@apply mb-1 mx-4 my-4 block text-center relative after:bg-vector after:absolute lg:after:w-[220%] after:w-[250%] after:h-[180%] lg:after:h-[160%] after:-top-[55%] after:-left-[20%] md:after:left-[37%] lg:after:-top-[46%] lg:after:-left-[20%] after:bg-contain after:bg-no-repeat;
+		@apply mb-1 mx-4 my-4 block text-center relative after:bg-vector after:absolute lg:after:w-[220%] after:w-[50%] after:h-[180%] lg:after:h-[160%] after:-top-[55%] after:-left-[20%] md:after:left-[37%] lg:after:-top-[46%] lg:after:-left-[20%] after:bg-contain after:bg-no-repeat;
 	
 		@apply lg:inline
 	}
@@ -289,7 +289,7 @@
 
 @layer utilities{
 	.newsletter h2 > span {
-		@apply mb-1 mx-4 my-4 block text-center relative after:bg-vector after:absolute lg:after:w-[310%] after:w-[270%] after:h-[200%] lg:after:h-[220%] after:-top-[57%] after:left-[30%] md:after:left-[37%] lg:after:-top-[66%] lg:after:-left-[20%] after:bg-contain after:bg-no-repeat;
+		@apply mb-1 mx-4 my-4 block text-center relative after:bg-vector after:absolute lg:after:w-[310%] after:w-[70%] after:h-[200%] lg:after:h-[220%] after:-top-[65%] after:left-[19%] md:after:left-[37%] lg:after:-top-[66%] lg:after:-left-[20%] after:bg-contain after:bg-no-repeat;
 	
 		@apply lg:inline
 	}
@@ -330,7 +330,7 @@
 }
 
 .donations > div > div{
-	@apply grid w-4/5 mx-auto;
+	@apply grid w-full mx-auto;
 	
 	@apply lg:grid-cols-3 lg:w-full
 }
@@ -345,7 +345,7 @@
 
 @layer utilities{
 	.donations > div > h2 > span {
-		@apply mb-1 mx-4 my-4 block text-center relative after:bg-vector after:absolute lg:after:w-[220%] after:w-[250%] after:h-[180%] lg:after:h-[160%] after:-top-[55%] after:left-[30%] md:after:left-[37%] lg:after:-top-[46%] lg:after:-left-[20%] after:bg-contain after:bg-no-repeat;
+		@apply mb-1 mx-4 my-4 block text-center relative after:bg-vector after:absolute lg:after:w-[220%] after:w-[50%] after:h-[180%] lg:after:h-[160%] after:-top-[55%] after:left-[22%] md:after:left-[37%] lg:after:-top-[46%] lg:after:-left-[20%] after:bg-contain after:bg-no-repeat;
 	
 		@apply lg:inline
 	}
@@ -475,7 +475,7 @@
 
 @layer utilities{
 	.people_section h2 > span {
-		@apply mb-1 mx-4 my-4 block text-center relative after:bg-vector after:absolute lg:after:w-[220%] after:w-[250%] after:h-[180%] lg:after:h-[160%] after:-top-[55%] after:-left-[20%] md:after:left-[37%] lg:after:-top-[46%] lg:after:-left-[20%] after:bg-contain after:bg-no-repeat;
+		@apply mb-1 mx-4 my-4 block text-center relative after:bg-vector after:absolute lg:after:w-[220%] after:w-[150%] after:h-[180%] lg:after:h-[160%] after:-top-[55%] after:-left-[20%] md:after:left-[37%] lg:after:-top-[46%] lg:after:-left-[20%] after:bg-contain after:bg-no-repeat;
 	
 		@apply lg:inline
 	}
